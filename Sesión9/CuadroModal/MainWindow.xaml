@@ -1,0 +1,29 @@
+﻿<Window x:Class="CuadroModal.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CuadroModal"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        Background="Blue">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0">
+            <MenuItem Header="_Archivo">
+                <MenuItem Header="Cuadro Modal"
+                      Name="CDModal"
+                      Click="CDModal_Click"/>
+                <MenuItem Header="Cuadro No Modal"
+                      Name="CDNoModal"
+                      Click="CDModal_Click"/>
+            </MenuItem>
+        </Menu>
+        <Canvas Grid.Row="1"
+                Name="ElCanvas"
+                Background="Red"/>
+    </Grid>
+</Window>

@@ -1,0 +1,53 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\KDINWARD\\source\\repos\\GridEventosBoton\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CEC2D05D-66EF-4786-B819-7FCB4B41715E}|GridEventosBoton\\GridEventosBoton.csproj|c:\\users\\kdinward\\source\\repos\\grideventosboton\\grideventosboton\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEC2D05D-66EF-4786-B819-7FCB4B41715E}|GridEventosBoton\\GridEventosBoton.csproj|solutionrelative:grideventosboton\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEC2D05D-66EF-4786-B819-7FCB4B41715E}|GridEventosBoton\\GridEventosBoton.csproj|c:\\users\\kdinward\\source\\repos\\grideventosboton\\grideventosboton\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{CEC2D05D-66EF-4786-B819-7FCB4B41715E}|GridEventosBoton\\GridEventosBoton.csproj|solutionrelative:grideventosboton\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\KDINWARD\\source\\repos\\GridEventosBoton\\GridEventosBoton\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "GridEventosBoton\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\KDINWARD\\source\\repos\\GridEventosBoton\\GridEventosBoton\\MainWindow.xaml",
+              "RelativeToolTip": "GridEventosBoton\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-09-29T11:38:48.706Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\KDINWARD\\source\\repos\\GridEventosBoton\\GridEventosBoton\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "GridEventosBoton\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\KDINWARD\\source\\repos\\GridEventosBoton\\GridEventosBoton\\MainWindow.xaml.cs",
+              "RelativeToolTip": "GridEventosBoton\\MainWindow.xaml.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAAE4AAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-29T11:38:43.497Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

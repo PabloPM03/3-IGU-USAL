@@ -1,0 +1,35 @@
+﻿<Window x:Class="ListaAmigos.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ListaAmigos"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <TextBox x:Name="txtNombre" Margin="10"/>
+        <TextBox x:Name="txtApellidos" Margin="10" Grid.Row="1"/>
+        <Button Name="btnAdd" Grid.Column="1" Margin="10" Content="Añadir" Click="btnAdd_Click" IsDefault="True"/>
+        <ListView Name="lstAmigos" Grid.Row="2" Grid.ColumnSpan="2" SelectionChanged="ListBox_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Nombre" Width="120" DisplayMemberBinding="{Binding nombre}"/>
+                    <GridViewColumn Header="Apellidos" Width="240" DisplayMemberBinding="{Binding apellido}"/>
+                    <GridViewColumn Header="Edad" Width="150" DisplayMemberBinding="{Binding edad}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <TextBlock Name="lblEstado" Grid.Row="3" Grid.ColumnSpan="2" Background="Aqua" Padding="10"/>
+    </Grid>
+</Window>

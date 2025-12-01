@@ -1,0 +1,16 @@
+C:\Users\KDINWARD\source\repos\ListaAmigos\bin\Debug\ListaAmigos.exe.config
+C:\Users\KDINWARD\source\repos\ListaAmigos\bin\Debug\ListaAmigos.exe
+C:\Users\KDINWARD\source\repos\ListaAmigos\bin\Debug\ListaAmigos.pdb
+C:\Users\KDINWARD\source\repos\ListaAmigos\obj\Debug\ListaAmigos.csproj.AssemblyReference.cache
+C:\Users\KDINWARD\source\repos\ListaAmigos\obj\Debug\MainWindow.g.cs
+C:\Users\KDINWARD\source\repos\ListaAmigos\obj\Debug\App.g.cs
+C:\Users\KDINWARD\source\repos\ListaAmigos\obj\Debug\ListaAmigos_MarkupCompile.cache
+C:\Users\KDINWARD\source\repos\ListaAmigos\obj\Debug\ListaAmigos_MarkupCompile.lref
+C:\Users\KDINWARD\source\repos\ListaAmigos\obj\Debug\MainWindow.baml
+C:\Users\KDINWARD\source\repos\ListaAmigos\obj\Debug\ListaAmigos.g.resources
+C:\Users\KDINWARD\source\repos\ListaAmigos\obj\Debug\ListaAmigos.Properties.Resources.resources
+C:\Users\KDINWARD\source\repos\ListaAmigos\obj\Debug\ListaAmigos.csproj.GenerateResource.cache
+C:\Users\KDINWARD\source\repos\ListaAmigos\obj\Debug\ListaAmigos.csproj.CoreCompileInputs.cache
+C:\Users\KDINWARD\source\repos\ListaAmigos\obj\Debug\ListaAmigos.exe
+C:\Users\KDINWARD\source\repos\ListaAmigos\obj\Debug\ListaAmigos.pdb
+C:\Users\KDINWARD\source\repos\ListaAmigos\obj\Debug\ListaAmigos.exe.config

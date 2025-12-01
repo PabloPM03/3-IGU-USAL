@@ -1,0 +1,20 @@
+C:\Users\KDINWARD\source\repos\20-10-25 (Semana 2.pdf)\bin\Debug\net8.0-windows\20-10-25 (Semana 2.pdf).exe
+C:\Users\KDINWARD\source\repos\20-10-25 (Semana 2.pdf)\bin\Debug\net8.0-windows\20-10-25 (Semana 2.pdf).deps.json
+C:\Users\KDINWARD\source\repos\20-10-25 (Semana 2.pdf)\bin\Debug\net8.0-windows\20-10-25 (Semana 2.pdf).runtimeconfig.json
+C:\Users\KDINWARD\source\repos\20-10-25 (Semana 2.pdf)\bin\Debug\net8.0-windows\20-10-25 (Semana 2.pdf).dll
+C:\Users\KDINWARD\source\repos\20-10-25 (Semana 2.pdf)\bin\Debug\net8.0-windows\20-10-25 (Semana 2.pdf).pdb
+C:\Users\KDINWARD\source\repos\20-10-25 (Semana 2.pdf)\obj\Debug\net8.0-windows\MainWindow.g.cs
+C:\Users\KDINWARD\source\repos\20-10-25 (Semana 2.pdf)\obj\Debug\net8.0-windows\App.g.cs
+C:\Users\KDINWARD\source\repos\20-10-25 (Semana 2.pdf)\obj\Debug\net8.0-windows\20-10-25 (Semana 2.pdf)_MarkupCompile.cache
+C:\Users\KDINWARD\source\repos\20-10-25 (Semana 2.pdf)\obj\Debug\net8.0-windows\20-10-25 (Semana 2.pdf)_MarkupCompile.lref
+C:\Users\KDINWARD\source\repos\20-10-25 (Semana 2.pdf)\obj\Debug\net8.0-windows\MainWindow.baml
+C:\Users\KDINWARD\source\repos\20-10-25 (Semana 2.pdf)\obj\Debug\net8.0-windows\20-10-25 (Semana 2.pdf).g.resources
+C:\Users\KDINWARD\source\repos\20-10-25 (Semana 2.pdf)\obj\Debug\net8.0-windows\20-10-25 (Semana 2.pdf).GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\KDINWARD\source\repos\20-10-25 (Semana 2.pdf)\obj\Debug\net8.0-windows\20-10-25 (Semana 2.pdf).AssemblyInfoInputs.cache
+C:\Users\KDINWARD\source\repos\20-10-25 (Semana 2.pdf)\obj\Debug\net8.0-windows\20-10-25 (Semana 2.pdf).AssemblyInfo.cs
+C:\Users\KDINWARD\source\repos\20-10-25 (Semana 2.pdf)\obj\Debug\net8.0-windows\20-10-25 (Semana 2.pdf).csproj.CoreCompileInputs.cache
+C:\Users\KDINWARD\source\repos\20-10-25 (Semana 2.pdf)\obj\Debug\net8.0-windows\20-10-25 (Semana 2.pdf).dll
+C:\Users\KDINWARD\source\repos\20-10-25 (Semana 2.pdf)\obj\Debug\net8.0-windows\refint\20-10-25 (Semana 2.pdf).dll
+C:\Users\KDINWARD\source\repos\20-10-25 (Semana 2.pdf)\obj\Debug\net8.0-windows\20-10-25 (Semana 2.pdf).pdb
+C:\Users\KDINWARD\source\repos\20-10-25 (Semana 2.pdf)\obj\Debug\net8.0-windows\20-10-25 (Semana 2.pdf).genruntimeconfig.cache
+C:\Users\KDINWARD\source\repos\20-10-25 (Semana 2.pdf)\obj\Debug\net8.0-windows\ref\20-10-25 (Semana 2.pdf).dll

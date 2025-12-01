@@ -1,0 +1,68 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\KDINWARD\\source\\repos\\ListaAmigos\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FB398BD6-81FB-465D-89D6-CB924AFA4EEE}|ListaAmigos.csproj|c:\\users\\kdinward\\source\\repos\\listaamigos\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{FB398BD6-81FB-465D-89D6-CB924AFA4EEE}|ListaAmigos.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB398BD6-81FB-465D-89D6-CB924AFA4EEE}|ListaAmigos.csproj|C:\\Users\\KDINWARD\\source\\repos\\ListaAmigos\\amigo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB398BD6-81FB-465D-89D6-CB924AFA4EEE}|ListaAmigos.csproj|solutionrelative:amigo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB398BD6-81FB-465D-89D6-CB924AFA4EEE}|ListaAmigos.csproj|C:\\Users\\KDINWARD\\source\\repos\\ListaAmigos\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB398BD6-81FB-465D-89D6-CB924AFA4EEE}|ListaAmigos.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\KDINWARD\\source\\repos\\ListaAmigos\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "MainWindow.xaml",
+              "ToolTip": "C:\\Users\\KDINWARD\\source\\repos\\ListaAmigos\\MainWindow.xaml",
+              "RelativeToolTip": "MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-10T11:16:22.58Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\KDINWARD\\source\\repos\\ListaAmigos\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\KDINWARD\\source\\repos\\ListaAmigos\\MainWindow.xaml.cs",
+              "RelativeToolTip": "MainWindow.xaml.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAlwC4AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-10T11:16:21.759Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Amigo.cs",
+              "DocumentMoniker": "C:\\Users\\KDINWARD\\source\\repos\\ListaAmigos\\Amigo.cs",
+              "RelativeDocumentMoniker": "Amigo.cs",
+              "ToolTip": "C:\\Users\\KDINWARD\\source\\repos\\ListaAmigos\\Amigo.cs",
+              "RelativeToolTip": "Amigo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-10T11:44:42.515Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

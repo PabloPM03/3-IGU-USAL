@@ -1,0 +1,43 @@
+﻿<Window x:Class="GridEventosSobreGridRaton.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GridEventosSobreGridRaton"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        MouseMove="Window_MouseMove">
+        
+    
+    <Grid ShowGridLines="True" Name="ElGrid" KeyDown="Window_KeyDown">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Rectangle Stroke="Red" Name="ElRect" StrokeThickness="5" 
+                   Grid.Row="3" Grid.Column="3"
+                   RenderTransformOrigin="0.5,0.5">
+
+            <Rectangle.RenderTransform>
+                <RotateTransform Angle="0" x:Name="RectRot"/>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+    </Grid>
+</Window>

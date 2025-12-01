@@ -1,0 +1,4 @@
+C:\Users\KDINWARD\source\repos\GridEventosSobreGrid\GridEventosSobreGrid\obj\Debug\net8.0-windows\MainWindow.g.cs
+C:\Users\KDINWARD\source\repos\GridEventosSobreGrid\GridEventosSobreGrid\obj\Debug\net8.0-windows\App.g.cs
+C:\Users\KDINWARD\source\repos\GridEventosSobreGrid\GridEventosSobreGrid\obj\Debug\net8.0-windows\GridEventosSobreGrid_MarkupCompile.cache
+C:\Users\KDINWARD\source\repos\GridEventosSobreGrid\GridEventosSobreGrid\obj\Debug\net8.0-windows\GridEventosSobreGrid_MarkupCompile.lref

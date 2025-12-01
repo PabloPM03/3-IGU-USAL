@@ -1,0 +1,29 @@
+﻿<Window x:Class="CuadroModal.CuadroNoModal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CuadroModal"
+        mc:Ignorable="d"
+        Title="CuadroNoModal" Height="450" Width="200">
+    <StackPanel>
+        <Slider Name="SliderOpacidad"
+                Minimum="0" Maximum="1"
+                Orientation="Vertical"
+                HorizontalAlignment="Center"
+                TickPlacement="BottomRight"
+                IsSnapToTickEnabled="True"
+                TickFrequency="0.1"
+                Height="360"
+                ValueChanged="SliderOpacidad_ValueChanged"/>
+        <TextBlock Text="0" Name="Leyenda" HorizontalAlignment="Center"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Margin="10" Padding="15,5"
+                    Content="Cerrar"
+                    Click="Cerrar_Click"
+                    IsDefault="True"/>
+
+        </StackPanel>
+
+    </StackPanel>
+</Window>

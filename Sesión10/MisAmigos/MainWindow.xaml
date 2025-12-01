@@ -1,0 +1,85 @@
+﻿<Window x:Class="MisAmigos.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MisAmigos"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+
+    <Window.Resources>
+        <DataTemplate x:Key="TodosDatos" DataType="local:ClaseAmigo">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding Alias}" FontWeight="Bold"/>
+                <TextBlock Text="("/>
+                <TextBlock Text="{Binding Nombre}" FontWeight="Bold"/>
+                <TextBlock Text=" "/>
+                <TextBlock Text="{Binding Apellido}" FontWeight="Bold"/>
+                <TextBlock Text=")"/>
+            </StackPanel>
+        </DataTemplate>
+        <DataTemplate x:Key="SoloAlias" DataType="local:ClaseAmigo">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding Alias}" FontWeight="Bold" Foreground="Blue"/>
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0"
+                   Text="NUEVO AMIGO" Margin="20"
+                   HorizontalAlignment="Center"/>
+        <TextBlock Grid.Row="1" Grid.Column="0"
+                   Text="Alias:" Margin="10,20"
+                   HorizontalAlignment="Right"/>
+        <TextBox Grid.Row="1" Grid.Column="1"
+                 Name="AliasTextBox" Margin="10,20"
+                 HorizontalAlignment="Left" Width="200"/>
+        <StackPanel Grid.Row="2" Grid.Column="0"
+                    Orientation="Horizontal" HorizontalAlignment="Center"
+                    Margin="0,20">
+            <TextBlock Text="Nombre: "/>
+            <TextBox Name="NombreTextBox" Width="200"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="1"
+                    Orientation="Horizontal" HorizontalAlignment="Center"
+                    Margin="0,20">
+            <TextBlock Text="Apellido: "/>
+            <TextBox Name="ApellidoTextBox" Width="200"/>
+        </StackPanel>
+        <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
+                Content="AGREGAR AMIGO" Margin="10,20"
+                HorizontalAlignment="Center"
+                Width="150"
+                Click="Button_Click"
+                Name="ModificarBoton"
+                IsDefault="True"/>
+
+        <TextBlock Grid.Row="4" Grid.Column="0"
+                   Text="ALIAS DE MIS AMIGOS" Margin="10,20"
+                   HorizontalAlignment="Center"/>
+        <TextBlock Grid.Row="4" Grid.Column="1"
+                   Text="NOMBRE COMPLETO" Margin="10,20"
+                   HorizontalAlignment="Center"/>
+        <ListBox Grid.Row="5" Grid.Column="0" Name="AliasListBox"
+                 Margin="10"
+                 ItemTemplate="{StaticResource SoloAlias}"
+                 SelectionChanged="AliasListBox_SelectionChanged"/>
+        <ListBox Grid.Row="5" Grid.Column="1" Name="NombreCompletoListBox"
+                 Margin="10"
+                 ItemTemplate="{StaticResource TodosDatos}"/>
+    </Grid>
+    
+</Window>

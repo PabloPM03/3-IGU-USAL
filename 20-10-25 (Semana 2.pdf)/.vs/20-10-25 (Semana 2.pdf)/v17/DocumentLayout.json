@@ -1,0 +1,67 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\KDINWARD\\source\\repos\\20-10-25 (Semana 2.pdf)\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D605DE5C-2FC9-4D70-80C2-77FDC2074B29}|..\\Conversi\u00F3nEuroDolar\\Conversi\u00F3nEuroDolar.csproj|c:\\users\\kdinward\\source\\repos\\conversi\u00F3neurodolar\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D605DE5C-2FC9-4D70-80C2-77FDC2074B29}|..\\Conversi\u00F3nEuroDolar\\Conversi\u00F3nEuroDolar.csproj|c:\\users\\kdinward\\source\\repos\\conversi\u00F3neurodolar\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D605DE5C-2FC9-4D70-80C2-77FDC2074B29}|..\\Conversi\u00F3nEuroDolar\\Conversi\u00F3nEuroDolar.csproj|c:\\users\\kdinward\\source\\repos\\conversi\u00F3neurodolar\\numerictextbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "NumericTextBox.cs",
+              "DocumentMoniker": "C:\\Users\\KDINWARD\\source\\repos\\Conversi\u00F3nEuroDolar\\NumericTextBox.cs",
+              "RelativeDocumentMoniker": "..\\Conversi\u00F3nEuroDolar\\NumericTextBox.cs",
+              "ToolTip": "C:\\Users\\KDINWARD\\source\\repos\\Conversi\u00F3nEuroDolar\\NumericTextBox.cs",
+              "RelativeToolTip": "..\\Conversi\u00F3nEuroDolar\\NumericTextBox.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAuwDoAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-20T11:46:21.606Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\KDINWARD\\source\\repos\\Conversi\u00F3nEuroDolar\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "..\\Conversi\u00F3nEuroDolar\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\KDINWARD\\source\\repos\\Conversi\u00F3nEuroDolar\\MainWindow.xaml",
+              "RelativeToolTip": "..\\Conversi\u00F3nEuroDolar\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-10-20T11:09:25.41Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\KDINWARD\\source\\repos\\Conversi\u00F3nEuroDolar\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "..\\Conversi\u00F3nEuroDolar\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\KDINWARD\\source\\repos\\Conversi\u00F3nEuroDolar\\MainWindow.xaml.cs",
+              "RelativeToolTip": "..\\Conversi\u00F3nEuroDolar\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwBMAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-20T11:09:25.281Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
