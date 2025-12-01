@@ -1,0 +1,36 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "I:\\Mi unidad\\Universidad\\3\u00BA 25-26\\1er Cuatrimestre\\Interfaces Gr\u00E1ficas\\Practica Final Obligatoria\\Restaurante\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{518AB374-B55C-47AB-BFBA-5348AF771530}|Restaurante\\Restaurante.csproj|i:\\mi unidad\\universidad\\3\u00BA 25-26\\1er cuatrimestre\\interfaces gr\u00E1ficas\\practica final obligatoria\\restaurante\\restaurante\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{518AB374-B55C-47AB-BFBA-5348AF771530}|Restaurante\\Restaurante.csproj|solutionrelative:restaurante\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "I:\\Mi unidad\\Universidad\\3\u00BA 25-26\\1er Cuatrimestre\\Interfaces Gr\u00E1ficas\\Practica Final Obligatoria\\Restaurante\\Restaurante\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "Restaurante\\MainWindow.xaml",
+              "ToolTip": "I:\\Mi unidad\\Universidad\\3\u00BA 25-26\\1er Cuatrimestre\\Interfaces Gr\u00E1ficas\\Practica Final Obligatoria\\Restaurante\\Restaurante\\MainWindow.xaml",
+              "RelativeToolTip": "Restaurante\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-01T13:56:21.54Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

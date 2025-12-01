@@ -1,0 +1,20 @@
+C:\Users\Pablo-MSI\source\repos\Mi App 1\Mi App 1\bin\Debug\net8.0-windows\Mi App 1.exe
+C:\Users\Pablo-MSI\source\repos\Mi App 1\Mi App 1\bin\Debug\net8.0-windows\Mi App 1.deps.json
+C:\Users\Pablo-MSI\source\repos\Mi App 1\Mi App 1\bin\Debug\net8.0-windows\Mi App 1.runtimeconfig.json
+C:\Users\Pablo-MSI\source\repos\Mi App 1\Mi App 1\bin\Debug\net8.0-windows\Mi App 1.dll
+C:\Users\Pablo-MSI\source\repos\Mi App 1\Mi App 1\bin\Debug\net8.0-windows\Mi App 1.pdb
+C:\Users\Pablo-MSI\source\repos\Mi App 1\Mi App 1\obj\Debug\net8.0-windows\MainWindow.g.cs
+C:\Users\Pablo-MSI\source\repos\Mi App 1\Mi App 1\obj\Debug\net8.0-windows\App.g.cs
+C:\Users\Pablo-MSI\source\repos\Mi App 1\Mi App 1\obj\Debug\net8.0-windows\Mi App 1_MarkupCompile.cache
+C:\Users\Pablo-MSI\source\repos\Mi App 1\Mi App 1\obj\Debug\net8.0-windows\Mi App 1_MarkupCompile.lref
+C:\Users\Pablo-MSI\source\repos\Mi App 1\Mi App 1\obj\Debug\net8.0-windows\MainWindow.baml
+C:\Users\Pablo-MSI\source\repos\Mi App 1\Mi App 1\obj\Debug\net8.0-windows\Mi App 1.g.resources
+C:\Users\Pablo-MSI\source\repos\Mi App 1\Mi App 1\obj\Debug\net8.0-windows\Mi App 1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Pablo-MSI\source\repos\Mi App 1\Mi App 1\obj\Debug\net8.0-windows\Mi App 1.AssemblyInfoInputs.cache
+C:\Users\Pablo-MSI\source\repos\Mi App 1\Mi App 1\obj\Debug\net8.0-windows\Mi App 1.AssemblyInfo.cs
+C:\Users\Pablo-MSI\source\repos\Mi App 1\Mi App 1\obj\Debug\net8.0-windows\Mi App 1.csproj.CoreCompileInputs.cache
+C:\Users\Pablo-MSI\source\repos\Mi App 1\Mi App 1\obj\Debug\net8.0-windows\Mi App 1.dll
+C:\Users\Pablo-MSI\source\repos\Mi App 1\Mi App 1\obj\Debug\net8.0-windows\refint\Mi App 1.dll
+C:\Users\Pablo-MSI\source\repos\Mi App 1\Mi App 1\obj\Debug\net8.0-windows\Mi App 1.pdb
+C:\Users\Pablo-MSI\source\repos\Mi App 1\Mi App 1\obj\Debug\net8.0-windows\Mi App 1.genruntimeconfig.cache
+C:\Users\Pablo-MSI\source\repos\Mi App 1\Mi App 1\obj\Debug\net8.0-windows\ref\Mi App 1.dll
