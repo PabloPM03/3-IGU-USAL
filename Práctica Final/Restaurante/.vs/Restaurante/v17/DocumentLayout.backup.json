@@ -1,12 +1,91 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "I:\\Mi unidad\\Universidad\\3\u00BA 25-26\\1er Cuatrimestre\\Interfaces Gr\u00E1ficas\\Practica Final Obligatoria\\Restaurante\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\KDINWARD\\Repositorios\\3-IGU-USAL\\Pr\u00E1ctica Final\\Restaurante\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{518AB374-B55C-47AB-BFBA-5348AF771530}|Restaurante\\Restaurante.csproj|C:\\Users\\KDINWARD\\Repositorios\\3-IGU-USAL\\Pr\u00E1ctica Final\\Restaurante\\restaurante\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{518AB374-B55C-47AB-BFBA-5348AF771530}|Restaurante\\Restaurante.csproj|solutionrelative:restaurante\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{518AB374-B55C-47AB-BFBA-5348AF771530}|Restaurante\\Restaurante.csproj|c:\\users\\kdinward\\repositorios\\3-igu-usal\\pr\u00E1ctica final\\restaurante\\restaurante\\mainwindow.xaml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{518AB374-B55C-47AB-BFBA-5348AF771530}|Restaurante\\Restaurante.csproj|solutionrelative:restaurante\\mainwindow.xaml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{518AB374-B55C-47AB-BFBA-5348AF771530}|Restaurante\\Restaurante.csproj|c:\\users\\kdinward\\repositorios\\3-igu-usal\\pr\u00E1ctica final\\restaurante\\restaurante\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{518AB374-B55C-47AB-BFBA-5348AF771530}|Restaurante\\Restaurante.csproj|solutionrelative:restaurante\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
   "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\KDINWARD\\Repositorios\\3-IGU-USAL\\Pr\u00E1ctica Final\\Restaurante\\Restaurante\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "Restaurante\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\KDINWARD\\Repositorios\\3-IGU-USAL\\Pr\u00E1ctica Final\\Restaurante\\Restaurante\\MainWindow.xaml",
+              "RelativeToolTip": "Restaurante\\MainWindow.xaml",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAH4AAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-01T17:30:04.976Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\KDINWARD\\Repositorios\\3-IGU-USAL\\Pr\u00E1ctica Final\\Restaurante\\Restaurante\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "Restaurante\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\KDINWARD\\Repositorios\\3-IGU-USAL\\Pr\u00E1ctica Final\\Restaurante\\Restaurante\\MainWindow.xaml.cs",
+              "RelativeToolTip": "Restaurante\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T14:02:04.153Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    },
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "FloatingWindowState": {
+        "Id": "e5793b6b-086b-4e75-b75b-178bad7a0e11",
+        "Display": 1,
+        "X": 863,
+        "Y": -21,
+        "Width": 800,
+        "Height": 600,
+        "WindowState": 2
+      },
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\KDINWARD\\Repositorios\\3-IGU-USAL\\Pr\u00E1ctica Final\\Restaurante\\Restaurante\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "Restaurante\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\KDINWARD\\Repositorios\\3-IGU-USAL\\Pr\u00E1ctica Final\\Restaurante\\Restaurante\\MainWindow.xaml",
+              "RelativeToolTip": "Restaurante\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-01T13:56:21.54Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GridEventos")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a8aca0251097a53b89a99365d4564b2e96c7003d")]
 [assembly: System.Reflection.AssemblyProductAttribute("GridEventos")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GridEventos")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

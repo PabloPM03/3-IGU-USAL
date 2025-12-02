@@ -1,0 +1,1 @@
+Maximize Window: https://stackoverflow.com/questions/3121900/how-can-i-make-a-wpf-window-maximized-on-the-screen-with-the-mouse-cursor

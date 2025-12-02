@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\KDINWARD\source\repos\GridEventosSobreGrid\GridEventosSobreGrid\obj\Debug\net8.0-windows\
+C:\Users\KDINWARD\Repositorios\3-IGU-USAL\Ejercicios\GridEventosSobreGrid\GridEventosSobreGrid\obj\Debug\net8.0-windows\
 GridEventosSobreGrid
 none
 false
-TRACE;DEBUG;NET;NET8_0;NETCOREAPP
-C:\Users\KDINWARD\source\repos\GridEventosSobreGrid\GridEventosSobreGrid\App.xaml
+TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
+C:\Users\KDINWARD\Repositorios\3-IGU-USAL\Ejercicios\GridEventosSobreGrid\GridEventosSobreGrid\App.xaml
 11407045341
 
 4447331689
-198-344842731
+198-192518753
 MainWindow.xaml;
 
 True

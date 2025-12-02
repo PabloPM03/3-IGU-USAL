@@ -14,3 +14,19 @@ C:\Users\Pablo-MSI\source\repos\Restaurante\Restaurante\obj\Debug\Restaurante.cs
 C:\Users\Pablo-MSI\source\repos\Restaurante\Restaurante\obj\Debug\Restaurante.exe
 C:\Users\Pablo-MSI\source\repos\Restaurante\Restaurante\obj\Debug\Restaurante.pdb
 C:\Users\Pablo-MSI\source\repos\Restaurante\Restaurante\obj\Debug\Restaurante.exe.config
+C:\Users\KDINWARD\Repositorios\3-IGU-USAL\Práctica Final\Restaurante\Restaurante\bin\Debug\Restaurante.exe.config
+C:\Users\KDINWARD\Repositorios\3-IGU-USAL\Práctica Final\Restaurante\Restaurante\bin\Debug\Restaurante.exe
+C:\Users\KDINWARD\Repositorios\3-IGU-USAL\Práctica Final\Restaurante\Restaurante\bin\Debug\Restaurante.pdb
+C:\Users\KDINWARD\Repositorios\3-IGU-USAL\Práctica Final\Restaurante\Restaurante\obj\Debug\Restaurante.csproj.AssemblyReference.cache
+C:\Users\KDINWARD\Repositorios\3-IGU-USAL\Práctica Final\Restaurante\Restaurante\obj\Debug\MainWindow.g.cs
+C:\Users\KDINWARD\Repositorios\3-IGU-USAL\Práctica Final\Restaurante\Restaurante\obj\Debug\App.g.cs
+C:\Users\KDINWARD\Repositorios\3-IGU-USAL\Práctica Final\Restaurante\Restaurante\obj\Debug\Restaurante_MarkupCompile.cache
+C:\Users\KDINWARD\Repositorios\3-IGU-USAL\Práctica Final\Restaurante\Restaurante\obj\Debug\Restaurante_MarkupCompile.lref
+C:\Users\KDINWARD\Repositorios\3-IGU-USAL\Práctica Final\Restaurante\Restaurante\obj\Debug\MainWindow.baml
+C:\Users\KDINWARD\Repositorios\3-IGU-USAL\Práctica Final\Restaurante\Restaurante\obj\Debug\Restaurante.g.resources
+C:\Users\KDINWARD\Repositorios\3-IGU-USAL\Práctica Final\Restaurante\Restaurante\obj\Debug\Restaurante.Properties.Resources.resources
+C:\Users\KDINWARD\Repositorios\3-IGU-USAL\Práctica Final\Restaurante\Restaurante\obj\Debug\Restaurante.csproj.GenerateResource.cache
+C:\Users\KDINWARD\Repositorios\3-IGU-USAL\Práctica Final\Restaurante\Restaurante\obj\Debug\Restaurante.csproj.CoreCompileInputs.cache
+C:\Users\KDINWARD\Repositorios\3-IGU-USAL\Práctica Final\Restaurante\Restaurante\obj\Debug\Restaurante.exe
+C:\Users\KDINWARD\Repositorios\3-IGU-USAL\Práctica Final\Restaurante\Restaurante\obj\Debug\Restaurante.pdb
+C:\Users\KDINWARD\Repositorios\3-IGU-USAL\Práctica Final\Restaurante\Restaurante\obj\Debug\Restaurante.exe.config

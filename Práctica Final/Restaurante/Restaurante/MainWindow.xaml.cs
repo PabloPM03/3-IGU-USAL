@@ -20,6 +20,7 @@ namespace Restaurante
     /// </summary>
     public partial class MainWindow : Window
     {
+        private double escalaMapaActual = 1;
         public MainWindow()
         {
             InitializeComponent();
@@ -35,14 +36,59 @@ namespace Restaurante
 
         private void btnVerRestaurante_Click(object sender, RoutedEventArgs e)
         {
+
+        }
+
+        private void canvasAnadirMesa_Click(object sender, RoutedEventArgs e)
+        {
             if (extendedMenu.Visibility == Visibility.Visible)
             {
+                btnAnadirMesa.Background = Brushes.LightGray;
                 extendedMenu.Visibility = Visibility.Hidden;
             }
             else
             {
+                btnAnadirMesa.Background = Brushes.Gray;
                 extendedMenu.Visibility = Visibility.Visible;
             }
+
+        }
+
+        private void btnVerCarta_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnCuenta_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnAjustes_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnZoom_Click(object sender, RoutedEventArgs e)
+        {
+            if (sender == btnZoomMas)
+            {
+                if (escalaMapaActual < 3)
+                {
+                    escalaMapaActual += 0.25;
+                }
+            }
+            else
+            {
+                if (escalaMapaActual > 1)
+                {
+                    escalaMapaActual -= 0.25;
+                }
+
+            }
+
+            escalaMapa.ScaleX = escalaMapaActual;
+            escalaMapa.ScaleY = escalaMapaActual;
         }
     }
 }
