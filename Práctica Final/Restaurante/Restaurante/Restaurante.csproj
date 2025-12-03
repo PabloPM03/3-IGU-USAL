@@ -63,6 +63,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="clases\Comanda.cs" />
+    <Compile Include="clases\Mesa.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -95,16 +97,31 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="menu.png" />
-    <Resource Include="setting.png" />
-    <Resource Include="table.png" />
-    <Resource Include="user.png" />
+    <Resource Include="assets\menu.png" />
+    <Resource Include="assets\setting.png" />
+    <Resource Include="assets\table.png" />
+    <Resource Include="assets\user.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="plus.png" />
+    <Resource Include="assets\plus.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="minus.png" />
+    <Resource Include="assets\minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ventanas\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assets\wood_Floor.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assets\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assets\icon2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assets\icon3.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

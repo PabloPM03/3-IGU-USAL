@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("minus.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("wood_floor.jpg")]
 
 

@@ -4,24 +4,27 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Restaurante"
-        mc:Ignorable="d" WindowState="Maximized"
-        MinHeight="400" MinWidth="800"
-        Title="MainWindow" Name="ventanaPrincipal">
+        mc:Ignorable="d"
+        Icon="/assets/icon3.png"
+        MinHeight="520" MinWidth="460"
+        Height="920" Width="740"
+        Title="MainWindow" Name="ventanaPrincipal" 
+        SizeChanged="ventanaPrincipal_SizeChanged">
     
-    
-    <Grid x:Name="pantallaPrincipal">
+        <!--=== DEFINICIÓN DEL GRID BASE ===-->
+    <Grid x:Name="gridBase">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Name="columnaBotones" Width="60" />
+            <ColumnDefinition Width="60" />
+            <ColumnDefinition Name="columnaEsxtend" Width="400"/>
             <ColumnDefinition/>
-            <ColumnDefinition Width="5*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
+            <RowDefinition Height="20"/>
             <RowDefinition/>
-            <RowDefinition Height="auto"/>
+            <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
 
-        <!--COLUMNA DE BOTONES-->
+        <!--=== GRID COLUMNA DE BOTONES ===-->
         <Grid Grid.Row="1" Grid.Column="0" >
             <Grid.RowDefinitions>
                 <RowDefinition Height="60"/>
@@ -34,22 +37,22 @@
 
             <Rectangle Grid.Row="0" Grid.RowSpan="7" Fill="LightGray"/>
 
-            <Button Name="btnVerRestaurante" Grid.Row="0" BorderThickness="0" Background="LightGray" Padding="10" Click="btnVerRestaurante_Click">
-                <Image Source="/table.png"/>
+            <Button Name="btnVerDatosMesa" Grid.Row="0" BorderThickness="0" Background="LightGray" Padding="10" Click="btnVerDatosMesa_Click">
+                <Image Source="/assets/table.png"/>
             </Button>
-            <Button Name="btnAnadirMesa" Grid.Row="1" BorderThickness="0" Background="LightGray" Padding="10" Click="canvasAnadirMesa_Click">
-                <Image Source="/plus.png"/>
+            <Button Name="btnAnadirMesa" Grid.Row="1" BorderThickness="0" Background="LightGray" Padding="10" Click="btnAnadirMesa_Click">
+                <Image Source="/assets/plus.png"/>
             </Button>
             <Button Name="btnVerCarta" Grid.Row="2" BorderThickness="0" Background="LightGray" Padding="10" Click="btnVerCarta_Click">
-                <Image Source="/menu.png"/>
+                <Image Source="/assets/menu.png"/>
             </Button>
 
             <!--AQUI SE PUEDEN INTRODUCIR MÁS BOTONES-->
             <Button Name="btnCuenta" Grid.Row="4" BorderThickness="0" Background="LightGray" Padding="10" Click="btnCuenta_Click">
-                <Image Source="/user.png"/>
+                <Image Source="/assets/user.png"/>
             </Button>
             <Button Name="btnAjustes" Grid.Row="5" BorderThickness="0" Background="LightGray" Padding="10" Click="btnAjustes_Click">
-                <Image Source="/setting.png"/>
+                <Image Source="/assets/setting.png"/>
             </Button>
         </Grid>
 
@@ -58,9 +61,13 @@
         <TextBlock x:Name="lblMenu" Grid.Row="0" Grid.ColumnSpan="3" Background="LightGray"/>
 
         <!--MAPA MESAS DEL RESTAURANTE-->
-        <ScrollViewer Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="1">
-            <Grid x:Name="gridMapaMesas" Width="2000" Height="1000" Background="DimGray">
+        <ScrollViewer x:Name="scrollMapa" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1"
+                      VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Background="Green">
+            <Grid x:Name="gridMapaMesas" Background="DimGray"
+                  Width="850" Height="1100">
                 <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
                     <RowDefinition/>
                     <RowDefinition/>
                     <RowDefinition/>
@@ -100,72 +107,30 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Grid.LayoutTransform>
                     <ScaleTransform x:Name="escalaMapa" ScaleX="1" ScaleY="1"/>
                 </Grid.LayoutTransform>
 
+                <Rectangle Grid.Row="0" Grid.Column="0" Grid.RowSpan="22" Grid.ColumnSpan="17" Fill="Green"/>
+                <Rectangle Grid.Row="2" Grid.Column="2" Grid.RowSpan="9" Grid.ColumnSpan="13" Fill="Brown"/>
+                <Rectangle Grid.Row="10" Grid.Column="9" Grid.RowSpan="10" Grid.ColumnSpan="6" Fill="Brown"/>
 
-                <Rectangle Grid.Row="0" Grid.Column="0" Grid.RowSpan="10" Fill="Black"/>
-                <Rectangle Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="14" Fill="Black"/>
-                <Rectangle Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="8" Grid.RowSpan="10" Fill="Black"/>
-                <Rectangle Grid.Row="11" Grid.Column="7" Grid.RowSpan="9" Fill="Black"/>
-                <Rectangle Grid.Row="1" Grid.Column="14" Grid.RowSpan="19" Fill="Black"/>
-                <Rectangle Grid.Row="5" Grid.Column="5" Fill="Black"/>
-                <Rectangle Grid.Row="5" Grid.Column="9" Fill="Black"/>
+                <Rectangle Grid.Row="1" Grid.Column="1" Grid.RowSpan="11" Fill="Black"/>
+                <Rectangle Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="15" Fill="Black"/>
+                <Rectangle Grid.Row="11" Grid.Column="1" Grid.ColumnSpan="8" Fill="Black"/>
+                <Rectangle Grid.Row="11" Grid.Column="8" Grid.RowSpan="10" Fill="Black"/>
+                <Rectangle Grid.Row="2" Grid.Column="15" Grid.RowSpan="19" Fill="Black"/>
+                <Rectangle Grid.Row="20" Grid.Column="8" Grid.ColumnSpan="8" Fill="Black"/>
+                <Rectangle Grid.Row="6" Grid.Column="6" Fill="Black"/>
+                <Rectangle Grid.Row="6" Grid.Column="10" Fill="Black"/>
 
-                <Rectangle Grid.Row="2" Grid.Column="2" Grid.RowSpan="3" Fill="Red"/>
-                <Rectangle Grid.Row="6" Grid.Column="2" Grid.RowSpan="3" Fill="Red"/>
-                <Rectangle Grid.Row="2" Grid.Column="8" Grid.ColumnSpan="3" Fill="Red"/>
-                <Rectangle Grid.Row="14" Grid.Column="12" Grid.RowSpan="3" Fill="Red"/>
-                <Rectangle Grid.Row="8" Grid.Column="12" Grid.RowSpan="3" Fill="Red"/>
-
-                <Rectangle Grid.Row="1" Grid.Column="4" Grid.RowSpan="2" Fill="Red"/>
-                <Rectangle Grid.Row="1" Grid.Column="6" Grid.RowSpan="2" Fill="Red"/>
-                <Rectangle Grid.Row="8" Grid.Column="4" Grid.RowSpan="2" Fill="Red"/>
-                <Rectangle Grid.Row="8" Grid.Column="6" Grid.RowSpan="2" Fill="Red"/>
-                <Rectangle Grid.Row="11" Grid.Column="8" Grid.ColumnSpan="2" Fill="Red"/>
-                <Rectangle Grid.Row="13" Grid.Column="8" Grid.ColumnSpan="2" Fill="Red"/>
-                <Rectangle Grid.Row="15" Grid.Column="8" Grid.ColumnSpan="2" Fill="Red"/>
-                <Rectangle Grid.Row="12" Grid.Column="12" Grid.ColumnSpan="2" Fill="Red"/>
-
-                <Rectangle Grid.Row="5" Grid.Column="4" Grid.RowSpan="1" Fill="Red"/>
-                <Rectangle Grid.Row="5" Grid.Column="6" Grid.RowSpan="1" Fill="Red"/>
-                <Rectangle Grid.Row="5" Grid.Column="8" Grid.RowSpan="1" Fill="Red"/>
-                <Rectangle Grid.Row="5" Grid.Column="10" Grid.RowSpan="1" Fill="Red"/>
-                <Rectangle Grid.Row="8" Grid.Column="9" Grid.RowSpan="1" Fill="Red"/>
-                <Rectangle Grid.Row="4" Grid.Column="12" Grid.RowSpan="1" Fill="Red"/>
-                <Rectangle Grid.Row="6" Grid.Column="12" Grid.RowSpan="1" Fill="Red"/>
-
-                <Rectangle Grid.Row="17" Grid.Column="14" Grid.ColumnSpan="4" Grid.RowSpan="2" Fill="GreenYellow"/>
-                <Label Grid.Row="17" Grid.Column="14" Grid.ColumnSpan="4" Grid.RowSpan="2" 
-                       Content="COCINA" FontSize="6" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                <Rectangle Grid.Row="17" Grid.Column="4" Grid.ColumnSpan="4" Grid.RowSpan="2" Fill="GreenYellow"/>
-                <Label Grid.Row="17" Grid.Column="4" Grid.ColumnSpan="4" Grid.RowSpan="2" 
-                       Content="COCINA" FontSize="6" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Rectangle Grid.Row="18" Grid.Column="14" Grid.ColumnSpan="4" Fill="GreenYellow"/>
+                <Label Grid.Row="18" Grid.Column="14" Grid.ColumnSpan="3" 
+                       Content="COCINA" FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Rectangle Grid.Row="18" Grid.Column="7" Grid.ColumnSpan="3" Fill="GreenYellow"/>
+                <Label Grid.Row="18" Grid.Column="7" Grid.ColumnSpan="3" 
+                       Content="ENTRADA" FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </Grid>
         </ScrollViewer>
         <!--MENU EXTENDIDO PARA LOS BOTONES-->
@@ -185,10 +150,10 @@
             </Grid.ColumnDefinitions>
 
             <Button Name="btnZoomMas"  Grid.Row="1" Click="btnZoom_Click">
-                <Image Source="/plus.png" Margin="2"/>
+                <Image Source="/assets/plus.png" Margin="2"/>
             </Button>
             <Button Name="btnZoomMenos" Grid.Row="2" Click="btnZoom_Click">
-                <Image Source="/minus.png" Margin="2"/>
+                <Image Source="/assets/minus.png" Margin="2"/>
             </Button>
         </Grid>
 
