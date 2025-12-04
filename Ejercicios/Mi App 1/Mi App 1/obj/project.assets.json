@@ -8,19 +8,24 @@
     "net8.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Pablo-MSI\\.nuget\\packages\\": {}
+    "C:\\Users\\KDINWARD\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Pablo-MSI\\source\\repos\\Mi App 1\\Mi App 1\\Mi App 1.csproj",
+      "projectUniqueName": "C:\\Users\\KDINWARD\\Repositorios\\3-IGU-USAL\\Ejercicios\\Mi App 1\\Mi App 1\\Mi App 1.csproj",
       "projectName": "Mi App 1",
-      "projectPath": "C:\\Users\\Pablo-MSI\\source\\repos\\Mi App 1\\Mi App 1\\Mi App 1.csproj",
-      "packagesPath": "C:\\Users\\Pablo-MSI\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Pablo-MSI\\source\\repos\\Mi App 1\\Mi App 1\\obj\\",
+      "projectPath": "C:\\Users\\KDINWARD\\Repositorios\\3-IGU-USAL\\Ejercicios\\Mi App 1\\Mi App 1\\Mi App 1.csproj",
+      "packagesPath": "C:\\Users\\KDINWARD\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\KDINWARD\\Repositorios\\3-IGU-USAL\\Ejercicios\\Mi App 1\\Mi App 1\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Pablo-MSI\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\KDINWARD\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

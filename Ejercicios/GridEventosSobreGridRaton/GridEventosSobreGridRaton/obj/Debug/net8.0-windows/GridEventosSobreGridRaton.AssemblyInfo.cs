@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GridEventosSobreGridRaton")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a241181d9a52fb4724628da46cc0a4fe32a41b7a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8d4adf5e79a1ad000e5512071743ae13c426cb8c")]
 [assembly: System.Reflection.AssemblyProductAttribute("GridEventosSobreGridRaton")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GridEventosSobreGridRaton")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

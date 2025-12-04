@@ -8,7 +8,7 @@
         Icon="/assets/icon3.png"
         MinHeight="520" MinWidth="460"
         Height="920" Width="740"
-        Title="MainWindow" Name="ventanaPrincipal" 
+        Title="Restaurante " Name="ventanaPrincipal" 
         SizeChanged="ventanaPrincipal_SizeChanged">
     
         <!--=== DEFINICIÓN DEL GRID BASE ===-->
@@ -37,10 +37,10 @@
 
             <Rectangle Grid.Row="0" Grid.RowSpan="7" Fill="LightGray"/>
 
-            <Button Name="btnVerDatosMesa" Grid.Row="0" BorderThickness="0" Background="LightGray" Padding="10" Click="btnVerDatosMesa_Click">
-                <Image Source="/assets/table.png"/>
+            <Button Name="btnGestiónMesas" Grid.Row="0" BorderThickness="0" Background="LightGray" Padding="10" Click="btnGestionMesas_Click">
+                <Image Source="/assets/table.png" ToolTip="Abrir el Gestor de Mesas"/>
             </Button>
-            <Button Name="btnAnadirMesa" Grid.Row="1" BorderThickness="0" Background="LightGray" Padding="10" Click="btnAnadirMesa_Click">
+            <Button Name="btnAnadirMesas" Grid.Row="1" BorderThickness="0" Background="LightGray" Padding="10" Click="btnAnadirMesas_Click">
                 <Image Source="/assets/plus.png"/>
             </Button>
             <Button Name="btnVerCarta" Grid.Row="2" BorderThickness="0" Background="LightGray" Padding="10" Click="btnVerCarta_Click">
@@ -134,7 +134,21 @@
             </Grid>
         </ScrollViewer>
         <!--MENU EXTENDIDO PARA LOS BOTONES-->
-        <Rectangle x:Name="extendedMenu" Grid.Column="1" Grid.Row="1" Fill="Gray" Visibility="Hidden"/>
+        <Grid x:Name="extendedMenu" Grid.Column="1" Grid.Row="1" Background="Gray" Visibility="Visible">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="10"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button Name="btnGestionMesas" Content="Gestor Mesas" 
+                    Grid.Column="1" Grid.Row="1"
+                    Margin="10" Click="btnGestionMesas_Click"/>
+        </Grid>
         
 
 

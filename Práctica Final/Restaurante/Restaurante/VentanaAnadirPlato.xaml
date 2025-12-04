@@ -1,0 +1,52 @@
+﻿<Window x:Class="Restaurante.VentanaAnadirPlato"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Restaurante"
+        mc:Ignorable="d"
+        Title="VentanaAnadirPlato" Height="400" Width="800"
+        ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <!--DESPLEGABLE CATEGORÍA-->
+        <Label Content="Categoría" Grid.Column="1" Grid.Row="0"/>
+        <ComboBox Name="categoriaComboBox" Grid.Column="1" Grid.Row="1" SelectionChanged="categoriaComboBox_SelectionChanged">
+            <ComboBoxItem Content="Primeros"/>
+            <ComboBoxItem Content="Segundos"/>
+            <ComboBoxItem Content="Postres"/>
+            <ComboBoxItem Content="Sobremesa"/>
+        </ComboBox>
+        
+        <!--LISTA PLATOS DISPONIBLES-->
+        <Label Content="Platos Disponibles" Grid.Column="1" Grid.Row="2"/>
+        <ListView Name="cuadroCartaCategoría" Grid.Column="1" Grid.Row="3" SelectionChanged="cuadroCartaCategoría_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Plato" Width="170" DisplayMemberBinding="{Binding nombre}"/>
+                    <GridViewColumn Header="Descripción" Width="530" DisplayMemberBinding="{Binding descripcion}"/>
+                    <GridViewColumn Header="Precio" Width="50" DisplayMemberBinding="{Binding precio}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        
+        <!--BOTONES AÑADIR / CANCELAR-->
+        <StackPanel Grid.Column="1" Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Name="btnCancelar" Content="CANCELAR" Margin="20" Width="300" IsCancel="True" Click="btnCancelar_Click"/>
+            <Button Name="btnAnadirPlato" Content="AÑADIR PLATO" Margin="20"  Width="300" IsDefault="True" Click="btnAnadirPlato_Click"/>
+        </StackPanel>
+
+    </Grid>
+</Window>

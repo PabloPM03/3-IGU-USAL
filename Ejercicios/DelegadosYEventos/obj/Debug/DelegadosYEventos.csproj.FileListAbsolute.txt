@@ -6,3 +6,11 @@ C:\Users\KDINWARD\source\repos\DelegadosYEventos\obj\Debug\DelegadosYEventos.csp
 C:\Users\KDINWARD\source\repos\DelegadosYEventos\obj\Debug\DelegadosYEventos.exe
 C:\Users\KDINWARD\source\repos\DelegadosYEventos\obj\Debug\DelegadosYEventos.pdb
 C:\Users\KDINWARD\source\repos\DelegadosYEventos\obj\Debug\DelegadosYEventos.exe.config
+C:\Users\KDINWARD\Repositorios\3-IGU-USAL\Ejercicios\DelegadosYEventos\bin\Debug\DelegadosYEventos.exe.config
+C:\Users\KDINWARD\Repositorios\3-IGU-USAL\Ejercicios\DelegadosYEventos\bin\Debug\DelegadosYEventos.exe
+C:\Users\KDINWARD\Repositorios\3-IGU-USAL\Ejercicios\DelegadosYEventos\bin\Debug\DelegadosYEventos.pdb
+C:\Users\KDINWARD\Repositorios\3-IGU-USAL\Ejercicios\DelegadosYEventos\obj\Debug\DelegadosYEventos.csproj.AssemblyReference.cache
+C:\Users\KDINWARD\Repositorios\3-IGU-USAL\Ejercicios\DelegadosYEventos\obj\Debug\DelegadosYEventos.exe.config
+C:\Users\KDINWARD\Repositorios\3-IGU-USAL\Ejercicios\DelegadosYEventos\obj\Debug\DelegadosYEventos.csproj.CoreCompileInputs.cache
+C:\Users\KDINWARD\Repositorios\3-IGU-USAL\Ejercicios\DelegadosYEventos\obj\Debug\DelegadosYEventos.exe
+C:\Users\KDINWARD\Repositorios\3-IGU-USAL\Ejercicios\DelegadosYEventos\obj\Debug\DelegadosYEventos.pdb

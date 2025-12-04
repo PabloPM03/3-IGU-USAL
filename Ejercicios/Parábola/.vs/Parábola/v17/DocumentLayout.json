@@ -1,24 +1,21 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\KDINWARD\\source\\repos\\Par\u00E1bola\\",
+  "WorkspaceRootPath": "C:\\Users\\KDINWARD\\Repositorios\\3-IGU-USAL\\Ejercicios\\Par\u00E1bola\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{475747D0-698A-4F7C-BECD-5853A9E0E968}|Par\u00E1bola.csproj|c:\\users\\kdinward\\source\\repos\\par\u00E1bola\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{475747D0-698A-4F7C-BECD-5853A9E0E968}|Par\u00E1bola.csproj|c:\\users\\kdinward\\repositorios\\3-igu-usal\\ejercicios\\par\u00E1bola\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{475747D0-698A-4F7C-BECD-5853A9E0E968}|Par\u00E1bola.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{475747D0-698A-4F7C-BECD-5853A9E0E968}|Par\u00E1bola.csproj|c:\\users\\kdinward\\source\\repos\\par\u00E1bola\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{475747D0-698A-4F7C-BECD-5853A9E0E968}|Par\u00E1bola.csproj|C:\\Users\\KDINWARD\\Repositorios\\3-IGU-USAL\\Ejercicios\\Par\u00E1bola\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{475747D0-698A-4F7C-BECD-5853A9E0E968}|Par\u00E1bola.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{475747D0-698A-4F7C-BECD-5853A9E0E968}|Par\u00E1bola.csproj|c:\\users\\kdinward\\source\\repos\\par\u00E1bola\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{475747D0-698A-4F7C-BECD-5853A9E0E968}|Par\u00E1bola.csproj|C:\\Users\\KDINWARD\\Repositorios\\3-IGU-USAL\\Ejercicios\\Par\u00E1bola\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{475747D0-698A-4F7C-BECD-5853A9E0E968}|Par\u00E1bola.csproj|solutionrelative:app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|Par\u00E1bola||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{475747D0-698A-4F7C-BECD-5853A9E0E968}|Par\u00E1bola.csproj|c:\\users\\kdinward\\source\\repos\\par\u00E1bola\\||{B270807C-D8C6-49EB-8EBE-8E8D566637A1}|5e9a8ac2-4f34-4521-858f-4c248ba31532"
     }
   ],
   "DocumentGroupContainers": [
@@ -28,53 +25,70 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 8,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "Par\u00E1bola",
-              "DocumentMoniker": "C:\\Users\\KDINWARD\\source\\repos\\Par\u00E1bola\\Par\u00E1bola.csproj",
+              "DocumentMoniker": "C:\\Users\\KDINWARD\\Repositorios\\3-IGU-USAL\\Ejercicios\\Par\u00E1bola\\Par\u00E1bola.csproj",
               "RelativeDocumentMoniker": "Par\u00E1bola.csproj",
-              "ToolTip": "C:\\Users\\KDINWARD\\source\\repos\\Par\u00E1bola\\Par\u00E1bola.csproj",
+              "ToolTip": "C:\\Users\\KDINWARD\\Repositorios\\3-IGU-USAL\\Ejercicios\\Par\u00E1bola\\Par\u00E1bola.csproj",
               "RelativeToolTip": "Par\u00E1bola.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-10-27T11:31:42.805Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-27T11:31:42.805Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "App.xaml",
-              "DocumentMoniker": "C:\\Users\\KDINWARD\\source\\repos\\Par\u00E1bola\\App.xaml",
+              "DocumentMoniker": "C:\\Users\\KDINWARD\\Repositorios\\3-IGU-USAL\\Ejercicios\\Par\u00E1bola\\App.xaml",
               "RelativeDocumentMoniker": "App.xaml",
-              "ToolTip": "C:\\Users\\KDINWARD\\source\\repos\\Par\u00E1bola\\App.xaml",
+              "ToolTip": "C:\\Users\\KDINWARD\\Repositorios\\3-IGU-USAL\\Ejercicios\\Par\u00E1bola\\App.xaml",
               "RelativeToolTip": "App.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-10-27T11:22:00.968Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-27T11:22:00.968Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\KDINWARD\\source\\repos\\Par\u00E1bola\\MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\KDINWARD\\Repositorios\\3-IGU-USAL\\Ejercicios\\Par\u00E1bola\\MainWindow.xaml",
               "RelativeDocumentMoniker": "MainWindow.xaml",
-              "ToolTip": "C:\\Users\\KDINWARD\\source\\repos\\Par\u00E1bola\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\KDINWARD\\Repositorios\\3-IGU-USAL\\Ejercicios\\Par\u00E1bola\\MainWindow.xaml",
               "RelativeToolTip": "MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-10-27T11:17:45.786Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-27T11:17:45.786Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\KDINWARD\\source\\repos\\Par\u00E1bola\\MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\KDINWARD\\Repositorios\\3-IGU-USAL\\Ejercicios\\Par\u00E1bola\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\KDINWARD\\source\\repos\\Par\u00E1bola\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\KDINWARD\\Repositorios\\3-IGU-USAL\\Ejercicios\\Par\u00E1bola\\MainWindow.xaml.cs",
               "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAAwBkAAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAABQAAAAAAAAAAAAuwBkAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-27T11:17:44.975Z",
               "EditorCaption": ""

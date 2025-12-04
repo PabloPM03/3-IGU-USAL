@@ -1,18 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\KDINWARD\\source\\repos\\ListaAmigos\\",
+  "WorkspaceRootPath": "C:\\Users\\KDINWARD\\Repositorios\\3-IGU-USAL\\Ejercicios\\ListaAmigos\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FB398BD6-81FB-465D-89D6-CB924AFA4EEE}|ListaAmigos.csproj|c:\\users\\kdinward\\source\\repos\\listaamigos\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{FB398BD6-81FB-465D-89D6-CB924AFA4EEE}|ListaAmigos.csproj|c:\\users\\kdinward\\repositorios\\3-igu-usal\\ejercicios\\listaamigos\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{FB398BD6-81FB-465D-89D6-CB924AFA4EEE}|ListaAmigos.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FB398BD6-81FB-465D-89D6-CB924AFA4EEE}|ListaAmigos.csproj|C:\\Users\\KDINWARD\\source\\repos\\ListaAmigos\\amigo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FB398BD6-81FB-465D-89D6-CB924AFA4EEE}|ListaAmigos.csproj|solutionrelative:amigo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FB398BD6-81FB-465D-89D6-CB924AFA4EEE}|ListaAmigos.csproj|C:\\Users\\KDINWARD\\Repositorios\\3-IGU-USAL\\Ejercicios\\ListaAmigos\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB398BD6-81FB-465D-89D6-CB924AFA4EEE}|ListaAmigos.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FB398BD6-81FB-465D-89D6-CB924AFA4EEE}|ListaAmigos.csproj|C:\\Users\\KDINWARD\\source\\repos\\ListaAmigos\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FB398BD6-81FB-465D-89D6-CB924AFA4EEE}|ListaAmigos.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FB398BD6-81FB-465D-89D6-CB924AFA4EEE}|ListaAmigos.csproj|C:\\Users\\KDINWARD\\Repositorios\\3-IGU-USAL\\Ejercicios\\ListaAmigos\\amigo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB398BD6-81FB-465D-89D6-CB924AFA4EEE}|ListaAmigos.csproj|solutionrelative:amigo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,15 +22,35 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\KDINWARD\\source\\repos\\ListaAmigos\\MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\KDINWARD\\Repositorios\\3-IGU-USAL\\Ejercicios\\ListaAmigos\\MainWindow.xaml",
               "RelativeDocumentMoniker": "MainWindow.xaml",
-              "ToolTip": "C:\\Users\\KDINWARD\\source\\repos\\ListaAmigos\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\KDINWARD\\Repositorios\\3-IGU-USAL\\Ejercicios\\ListaAmigos\\MainWindow.xaml",
               "RelativeToolTip": "MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-11-10T11:16:22.58Z",
@@ -38,23 +58,24 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\KDINWARD\\source\\repos\\ListaAmigos\\MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\KDINWARD\\Repositorios\\3-IGU-USAL\\Ejercicios\\ListaAmigos\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\KDINWARD\\source\\repos\\ListaAmigos\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\KDINWARD\\Repositorios\\3-IGU-USAL\\Ejercicios\\ListaAmigos\\MainWindow.xaml.cs",
               "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAlwC4AAAAqAAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAAawC4AAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-10T11:16:21.759Z"
+              "WhenOpened": "2025-11-10T11:16:21.759Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Amigo.cs",
-              "DocumentMoniker": "C:\\Users\\KDINWARD\\source\\repos\\ListaAmigos\\Amigo.cs",
+              "DocumentMoniker": "C:\\Users\\KDINWARD\\Repositorios\\3-IGU-USAL\\Ejercicios\\ListaAmigos\\Amigo.cs",
               "RelativeDocumentMoniker": "Amigo.cs",
-              "ToolTip": "C:\\Users\\KDINWARD\\source\\repos\\ListaAmigos\\Amigo.cs",
+              "ToolTip": "C:\\Users\\KDINWARD\\Repositorios\\3-IGU-USAL\\Ejercicios\\ListaAmigos\\Amigo.cs",
               "RelativeToolTip": "Amigo.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
