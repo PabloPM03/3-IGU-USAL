@@ -1,2 +1,9 @@
 Maximize Window: https://stackoverflow.com/questions/3121900/how-can-i-make-a-wpf-window-maximized-on-the-screen-with-the-mouse-cursor
 Random Class: https://learn.microsoft.com/es-es/dotnet/api/system.random?view=net-8.0
+Tooltip: https://learn.microsoft.com/en-us/dotnet/desktop/wpf/controls/tooltip-overview
+ComboBox: https://learn.microsoft.com/en-us/dotnet/desktop/wpf/controls/combobox
+Maximized Startup: https://stackoverflow.com/questions/3121900/how-can-i-make-a-wpf-window-maximized-on-the-screen-with-the-mouse-cursor
+Numeric TextBox Input: https://www.telerik.com/forums/numeric-input-control
+Clase Canvas y posicionamiento absoluto: https://learn.microsoft.com/es-es/dotnet/api/system.windows.controls.canvas
+Interfaz INotifyPropertyChanged: https://learn.microsoft.com/es-es/dotnet/api/system.componentmodel.inotifypropertychanged
+Enlace de datos (Data Binding) en WPF: https://learn.microsoft.com/es-es/dotnet/desktop/wpf/data/data-binding-overview

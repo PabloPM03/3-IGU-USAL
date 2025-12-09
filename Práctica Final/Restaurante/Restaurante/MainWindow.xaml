@@ -3,13 +3,14 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Restaurante"
+        xmlns:local="clr-namespace:Restaurante" d:DataContext="{d:DesignInstance Type=local:DatosRestaurante}"
         mc:Ignorable="d"
-        Icon="/assets/icon3.png"
+        Icon="/assets/icon.png"
         MinHeight="520" MinWidth="460"
         Height="920" Width="740"
-        Title="Restaurante " Name="ventanaPrincipal" 
-        SizeChanged="ventanaPrincipal_SizeChanged">
+        Title="Restaurante Asador La Muralla CR " Name="ventanaPrincipal" 
+        SizeChanged="ventanaPrincipal_SizeChanged"
+        WindowState="Maximized">
     
         <!--=== DEFINICIÓN DEL GRID BASE ===-->
     <Grid x:Name="gridBase">
@@ -24,42 +25,41 @@
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
 
-        <!--=== GRID COLUMNA DE BOTONES ===-->
-        <Grid Grid.Row="1" Grid.Column="0" >
+            <!--=== GRID COLUMNA DE BOTONES ===-->
+        <Grid Grid.Row="1" Grid.Column="0" Background="LightGray">
             <Grid.RowDefinitions>
                 <RowDefinition Height="60"/>
                 <RowDefinition Height="60"/>
                 <RowDefinition Height="60"/>
-                <RowDefinition/>
-                <RowDefinition Height="60"/>
+                <RowDefinition/> <!--ROW DE INTERESPACIO-->
                 <RowDefinition Height="60"/>
             </Grid.RowDefinitions>
 
-            <Rectangle Grid.Row="0" Grid.RowSpan="7" Fill="LightGray"/>
-
-            <Button Name="btnGestiónMesas" Grid.Row="0" BorderThickness="0" Background="LightGray" Padding="10" Click="btnGestionMesas_Click">
+                <!--BOTONES ARRIBA-->
+            <Button Name="btnGestionMesas" Grid.Row="0" BorderThickness="0" Background="LightGray" Padding="10" Click="btnGestionMesas_Click">
                 <Image Source="/assets/table.png" ToolTip="Abrir el Gestor de Mesas"/>
             </Button>
-            <Button Name="btnAnadirMesas" Grid.Row="1" BorderThickness="0" Background="LightGray" Padding="10" Click="btnAnadirMesas_Click">
-                <Image Source="/assets/plus.png"/>
+            <Button Name="btnEstadistica" Grid.Row="1" BorderThickness="0" Background="LightGray" Padding="10" Click="btnEstadistica_Click">
+                <Image Source="/assets/estadistica.png"/>
             </Button>
             <Button Name="btnVerCarta" Grid.Row="2" BorderThickness="0" Background="LightGray" Padding="10" Click="btnVerCarta_Click">
                 <Image Source="/assets/menu.png"/>
             </Button>
 
-            <!--AQUI SE PUEDEN INTRODUCIR MÁS BOTONES-->
-            <Button Name="btnCuenta" Grid.Row="4" BorderThickness="0" Background="LightGray" Padding="10" Click="btnCuenta_Click">
-                <Image Source="/assets/user.png"/>
-            </Button>
-            <Button Name="btnAjustes" Grid.Row="5" BorderThickness="0" Background="LightGray" Padding="10" Click="btnAjustes_Click">
-                <Image Source="/assets/setting.png"/>
+            <!--BOTONES ABAJO-->
+            <Button Name="btnReiniciar" Grid.Row="5" BorderThickness="0" Background="LightGray" Padding="10" Click="btnReiniciar_Click">
+                <Image Source="/assets/refresh.png"/>
             </Button>
         </Grid>
 
+            <!--==========-->
+            <!--MAPA MESAS-->
+            <!--==========-->
         
-        
+            <!--LABEL SUPERIOR (Nunca Utilizado)-->
         <TextBlock x:Name="lblMenu" Grid.Row="0" Grid.ColumnSpan="3" Background="LightGray"/>
 
+      
         <!--MAPA MESAS DEL RESTAURANTE-->
         <ScrollViewer x:Name="scrollMapa" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1"
                       VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Background="Green">
@@ -112,10 +112,12 @@
                     <ScaleTransform x:Name="escalaMapa" ScaleX="1" ScaleY="1"/>
                 </Grid.LayoutTransform>
 
+                    <!--COLOR SUELOS-->
                 <Rectangle Grid.Row="0" Grid.Column="0" Grid.RowSpan="22" Grid.ColumnSpan="17" Fill="Green"/>
                 <Rectangle Grid.Row="2" Grid.Column="2" Grid.RowSpan="9" Grid.ColumnSpan="13" Fill="Brown"/>
                 <Rectangle Grid.Row="10" Grid.Column="9" Grid.RowSpan="10" Grid.ColumnSpan="6" Fill="Brown"/>
 
+                    <!--COLOR PAREDES-->
                 <Rectangle Grid.Row="1" Grid.Column="1" Grid.RowSpan="11" Fill="Black"/>
                 <Rectangle Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="15" Fill="Black"/>
                 <Rectangle Grid.Row="11" Grid.Column="1" Grid.ColumnSpan="8" Fill="Black"/>
@@ -125,6 +127,7 @@
                 <Rectangle Grid.Row="6" Grid.Column="6" Fill="Black"/>
                 <Rectangle Grid.Row="6" Grid.Column="10" Fill="Black"/>
 
+                    <!--DETALLES COCINA/ENTRADA-->
                 <Rectangle Grid.Row="18" Grid.Column="14" Grid.ColumnSpan="4" Fill="GreenYellow"/>
                 <Label Grid.Row="18" Grid.Column="14" Grid.ColumnSpan="3" 
                        Content="COCINA" FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Center"/>
@@ -133,27 +136,139 @@
                        Content="ENTRADA" FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </Grid>
         </ScrollViewer>
-        <!--MENU EXTENDIDO PARA LOS BOTONES-->
-        <Grid x:Name="extendedMenu" Grid.Column="1" Grid.Row="1" Background="Gray" Visibility="Visible">
+        
+        <!--PLANTILLAS MENU EXTENDIDO PARA LOS BOTONES-->
+            <!--PLANTILLA GESTION MESAS EN MAPA-->
+        <Grid x:Name="menuControlMesa" Grid.Column="1" Grid.Row="1" Background="Gray" Visibility="Hidden">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="10"/>
                 <ColumnDefinition/>
-                <ColumnDefinition Width="10"/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="10"/>
-                <RowDefinition Height="80"/>
-                <RowDefinition/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
-            <Button Name="btnGestionMesas" Content="Gestor Mesas" 
-                    Grid.Column="1" Grid.Row="1"
-                    Margin="10" Click="btnGestionMesas_Click"/>
+
+            
+            <ComboBox x:Name="comboBox_menuControlMesa" 
+                  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="6" Margin="20"
+                  ItemsSource="{Binding listaMesas}"
+                  SelectedItem="{Binding mesaSeleccionada, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding id, StringFormat='Mesa {0}'}" FontWeight="Bold"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+                <!--MESA LIBRE-->
+            <TextBlock Name="panelInfoMesaLibre" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="6" Margin="15" Background="WhiteSmoke"
+                    Text="ESTA MESA ESTÁ LIBRE" FontSize="25" FontWeight="Bold" Foreground="Black" Padding="100"
+                       HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <!--MESA RESERVADA/OCUPADA/OCUPADACOMANDA-->
+            <StackPanel Name="panelInfoMesa" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="6" Margin="15" Background="WhiteSmoke">
+                <TextBlock Text="INFORMACIÓN" FontWeight="Bold" Foreground="Gray" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+                <TextBlock Margin="5">
+                    <Run Text="Mesa Nº: " Foreground="#555"/>
+                    <Run Text="{Binding mesaSeleccionada.id}" FontWeight="Black" FontSize="16"/>
+                </TextBlock>
+                <TextBlock Margin="5">
+                    <Run Text="Estado: " Foreground="#555"/>
+                    <Run Text="{Binding mesaSeleccionada.estado}" FontWeight="Black" FontSize="16"/>
+                </TextBlock>
+                <TextBlock Margin="5">
+                    <Run Text="Comensales: " Foreground="#555"/>
+                    <Run Text="{Binding mesaSeleccionada.comensales}" FontWeight="Bold" FontSize="16"/>
+                </TextBlock>
+                <TextBlock Margin="5,5,5,10">
+                    <Run Text="Capacidad: " Foreground="#555"/>
+                    <Run Text="{Binding mesaSeleccionada.capacidad}" FontWeight="Bold" FontSize="16"/>
+                </TextBlock>
+            </StackPanel>
+
+
+                <!--BOTONES REPROGRAMABLES-->
+            <Button Name="btn_Funcion1" Content="1" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2" Margin="5" Click="botonesMenuGestionMesas_Click"/>
+            <Button Name="btn_Funcion2" Content="2" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="2" Margin="5" Click="botonesMenuGestionMesas_Click"/>
+            <Button Name="btn_Funcion3" Content="3" Grid.Column="4" Grid.ColumnSpan="2" Grid.Row="2" Margin="5" Click="botonesMenuGestionMesas_Click"/>
+
+
+                <!--MESA OCUPADACOMANDA - CUADRO COMANDAS-->
+            <Grid Name="gridComandas"  Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="6" Margin="25" Background="LightGray" Visibility="Visible">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Label Content="COMANDA DE LA MESA ELEGIDA" Grid.Row="0" Grid.ColumnSpan="6"/>
+                <ListView Name="cuadroComandas" Grid.Row="1" ScrollViewer.HorizontalScrollBarVisibility="Visible" Background="White">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Categoria" Width="60" DisplayMemberBinding="{Binding tipo}"/>
+                            <GridViewColumn Header="Plato" Width="200" DisplayMemberBinding="{Binding nombre}"/>
+                            <GridViewColumn Header="Precio" Width="50" DisplayMemberBinding="{Binding precio}"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+
+
+            </Grid>
+
+                <!--GESTOR REQUISITO ENUNCIADO-->
+            <Button Name="btn_GestorAvanzado" Content="Gestor Avanzado de Mesas" Grid.Column="0" Grid.ColumnSpan="6" Grid.Row="5" Margin="20" Click="botonesMenuGestionMesas_Click"/>
+
         </Grid>
         
+            <!--MENU ESTADISTICAS-->
+        <TabControl Name="tabEstadistica" Visibility="Hidden" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" 
+            SelectionChanged="TabControl_SelectionChanged" Background="Gray">
+
+                <!--ESTADISTICA PLATOS POR MESA-->
+            <TabItem Header="Estadistica Global">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="Histórico de platos consumidos" 
+                       FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" Margin="10"/>
+
+                    <Canvas x:Name="canvasGlobal" Grid.Row="1" Margin="20" Background="LightGray"/>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Estadística Mesa Seleccionada">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock x:Name="txtTituloMesaEstadistica" 
+                       Text="Seleccione una mesa primero" 
+                       FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" Margin="10"/>
+
+                    <Canvas x:Name="canvasMesa" Grid.Row="1" Margin="20" Background="LightGray"/>
+
+                    <WrapPanel x:Name="panelLeyenda" Grid.Row="2" Margin="10" Orientation="Horizontal" HorizontalAlignment="Center"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
 
 
-        <!--BOTONES ZOOM MAPA-->
-        <Grid Grid.Row="1" Grid.Column="3" Margin="0,0,30,15" HorizontalAlignment="Right">
+
+            <!--BOTONES ZOOM MAPA-->
+        <Grid Grid.Row="1" Grid.Column="3" Margin="0,0,30,15" HorizontalAlignment="Right" Name="gridZoom">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition Height="30"/>
@@ -171,6 +286,7 @@
             </Button>
         </Grid>
 
+            <!--LABEL ESTADO MESA SELECCIONADA (NUNCA UTILIZADO)-->
         <TextBlock x:Name="lblEstado" Grid.Row="2" Grid.ColumnSpan="3" Background="LightGray"/>
 
     </Grid>

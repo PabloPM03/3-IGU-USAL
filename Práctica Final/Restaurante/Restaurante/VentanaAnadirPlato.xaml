@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Restaurante"
-        mc:Ignorable="d"
+        mc:Ignorable="d" Icon="/assets/plus.png"
         Title="VentanaAnadirPlato" Height="400" Width="800"
         ResizeMode="NoResize">
     <Grid>
@@ -21,7 +21,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <!--DESPLEGABLE CATEGORÍA-->
+            <!--DESPLEGABLE CATEGORÍA-->
         <Label Content="Categoría" Grid.Column="1" Grid.Row="0"/>
         <ComboBox Name="categoriaComboBox" Grid.Column="1" Grid.Row="1" SelectionChanged="categoriaComboBox_SelectionChanged">
             <ComboBoxItem Content="Primeros"/>
@@ -30,7 +30,7 @@
             <ComboBoxItem Content="Sobremesa"/>
         </ComboBox>
         
-        <!--LISTA PLATOS DISPONIBLES-->
+            <!--LISTA PLATOS DISPONIBLES-->
         <Label Content="Platos Disponibles" Grid.Column="1" Grid.Row="2"/>
         <ListView Name="cuadroCartaCategoría" Grid.Column="1" Grid.Row="3" SelectionChanged="cuadroCartaCategoría_SelectionChanged">
             <ListView.View>
@@ -42,9 +42,9 @@
             </ListView.View>
         </ListView>
         
-        <!--BOTONES AÑADIR / CANCELAR-->
+            <!--BOTONES AÑADIR / CANCELAR-->
         <StackPanel Grid.Column="1" Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button Name="btnCancelar" Content="CANCELAR" Margin="20" Width="300" IsCancel="True" Click="btnCancelar_Click"/>
+            <Button Name="btnCerrar" Content="CERRAR" Margin="20" Width="300" IsCancel="True" Click="btnCerrar_Click"/>
             <Button Name="btnAnadirPlato" Content="AÑADIR PLATO" Margin="20"  Width="300" IsDefault="True" Click="btnAnadirPlato_Click"/>
         </StackPanel>
 

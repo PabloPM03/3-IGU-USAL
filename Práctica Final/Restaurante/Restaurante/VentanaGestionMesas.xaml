@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Restaurante"
         mc:Ignorable="d" Icon="/assets/table.png"
         Title="VentanaGestionMesas"
-        Height="600" Width="900">
+        Height="600" Width="900" ResizeMode="NoResize">
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -24,9 +24,10 @@
             <RowDefinition Height="60"/>
         </Grid.RowDefinitions>
 
-
+            <!--CUADRO MESAS DISPONIBLES-->
         <Label Content="MESAS DISPONIBLES" Grid.Column="1" Grid.Row="1"/>
-        <ListView Name="cuadroMesas" Grid.Column="1" Grid.Row="2" SelectionChanged="cuadroMesas_SelectionChanged" ScrollViewer.HorizontalScrollBarVisibility="Hidden">
+        <ListView Name="cuadroMesas" Grid.Column="1" Grid.Row="2" SelectionChanged="cuadroMesas_SelectionChanged" ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                  ItemsSource="{Binding listaMesas}">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Id" Width="280" DisplayMemberBinding="{Binding id}"/>
@@ -36,8 +37,9 @@
             </ListView.View>
         </ListView>
         
+            <!--CUADRO COMANDA DE MESA ELEGIDA-->
         <Label Content="COMANDA DE LA MESA ELEGIDA" Grid.Column="1" Grid.Row="4"/>
-        <ListView Name="cuadroComandas" Grid.Column="1" Grid.Row="5" SelectionChanged="cuadroComandas_SelectionChanged" ScrollViewer.HorizontalScrollBarVisibility="Hidden">
+        <ListView Name="cuadroComandas" Grid.Column="1" Grid.Row="5" ScrollViewer.HorizontalScrollBarVisibility="Hidden">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Id" Width="30" DisplayMemberBinding="{Binding id}"/>
@@ -49,6 +51,7 @@
             </ListView.View>
         </ListView>
 
+            <!--BOTONES AÑADIR/ELIMINAR PLATO-->
         <StackPanel Grid.Column="1" Grid.Row="6" Orientation="Horizontal" HorizontalAlignment="Right">
             <Button Name="btnAnadirPlato" Content="Añadir Plato" Margin="15"  Width="100" Click="btnAnadirPlato_Click"/>
             <Button Name="btnEliminarPlato" Content="Eliminar Plato" Margin="15" Width="100" Click="btnEliminarPlato_Click"/>

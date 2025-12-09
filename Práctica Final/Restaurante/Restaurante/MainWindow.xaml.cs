@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,130 +20,299 @@ namespace Restaurante
     public partial class MainWindow : Window
     {
         public VentanaGestionMesas ventanaGestionMesas;
+        public VentanaReservar ventanaModificarDatos;
+        public VentanaAnadirPlato ventanaAnadirPlato;
 
-        List<Mesa> listaMesas = new List<Mesa>();
-        List<Plato> listaPlatosPrimeros = new List<Plato>();
-        List<Plato> listaPlatosSegundos = new List<Plato>();
-        List<Plato> listaPlatosPostres = new List<Plato>();
-        List<Plato> listaPlatosSobremesas = new List<Plato>();
         private double zoomActual = 1;
-        Mesa mesaSeleccionada;
 
         public MainWindow()
         {
             InitializeComponent();
-            ajustarMapa();
-            mesasPrueba();
-            cartaPrueba();
-            comandasPrueba();
-        }
-        
 
+            bool sesionLimpia = true;
+            MessageBoxResult resultado = MessageBox.Show("Bienvenido, quieres iniciar una sesión cargada con los datos de prueba? (En caso contrario se iniciará una sesión vacía)", "Bienvenido",
+            MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+            if (resultado == MessageBoxResult.Yes) { sesionLimpia = false; }
+            DatosRestaurante.datos.inicializarDatos(sesionLimpia);
+
+            this.DataContext = DatosRestaurante.datos;
+            
+            dibujarMesasMapa();
+            ajustarMapa();
+
+            DatosRestaurante.datos.cambioSeleccionMesa += OnCambioSeleccionMesa;
+        }
+
+
+            //-------------------------------//
+            //-- GESTIÓN MESA SELECCIONADA --//
+            //-------------------------------//
+        private void OnCambioSeleccionMesa(Mesa mesaSeleccionada)
+        {
+            if ( mesaSeleccionada != null) 
+            { 
+                seleccionarMesa(mesaSeleccionada); 
+                if (comboBox_menuControlMesa.SelectedItem != mesaSeleccionada)
+                {
+                    comboBox_menuControlMesa.SelectedItem = mesaSeleccionada;
+                }
+            }
+            actualizarGraficas();
+        }
         public void mesaSeleccionada_Click(Mesa mesaSeleccionada)
         {
-            //RESALTAR MESA
-            foreach (Mesa m in listaMesas) 
-            {
-                m.figuraMesa.Stroke = Brushes.Black; m.figuraMesa.StrokeThickness = 2;
-            }
-
-
-            if (mesaSeleccionada.gridMesaRepresentada.Children.Count > 0 && mesaSeleccionada.gridMesaRepresentada.Children[0] is Shape figuraMesa)
-            {
-                figuraMesa.Stroke = Brushes.Blue;
-                figuraMesa.StrokeThickness = 5;
-            }
-
-
-            //Click en el Mapa
-
-            if (ventanaGestionMesas != null && ventanaGestionMesas.IsLoaded)
-            {
-                ventanaGestionMesas.SeleccionMesaDesdeMapa(mesaSeleccionada);
-            }
-            this.mesaSeleccionada = mesaSeleccionada;
+            this.DataContext = DatosRestaurante.datos;
+            DatosRestaurante.datos.mesaSeleccionada = mesaSeleccionada;
+            seleccionarMesa(mesaSeleccionada);
         }
         public void seleccionarMesa(Mesa mesaSeleccionada)
         {
-
-
-        }
-
-
-
+            foreach (Mesa m in DatosRestaurante.datos.listaMesas)
+            {
+                m.figuraMesa.Stroke = Brushes.Black; m.figuraMesa.StrokeThickness = 2;
+            }
+            mesaSeleccionada.figuraMesa.Stroke = Brushes.Blue;
+            mesaSeleccionada.figuraMesa.StrokeThickness = 5;
 
             
-            //---------- FUNCIONES DE COLUMNA DE BOTONES ----------//
+            menuControlMesa.Visibility = Visibility.Visible;
+            actualizarInterfazSegunEstado();
+            btnGestionMesas.Background = Brushes.Gray;
 
-        private void btnVerDatosMesa_Click(object sender, RoutedEventArgs e)
+            btnVerCarta.Background = Brushes.LightGray;
+            btnEstadistica.Background = Brushes.LightGray;
+        }
+
+
+        public void actualizarInterfazSegunEstado()
         {
-            if (extendedMenu.Visibility == Visibility.Visible)
+            switch (DatosRestaurante.datos.mesaSeleccionada.estado)
             {
-                btnAnadirMesas.Background = Brushes.LightGray;
-                extendedMenu.Visibility = Visibility.Hidden;
-            }
-            else
-            {
-                btnAnadirMesas.Background = Brushes.Gray;
-                extendedMenu.Visibility = Visibility.Visible;
+                case EstadoMesa.Libre:
+                    panelInfoMesa.Visibility = Visibility.Hidden;
+                    panelInfoMesaLibre.Visibility = Visibility.Visible;
+
+                    btn_Funcion2.Content = "Reservar Mesa";
+                    btn_Funcion1.Visibility = Visibility.Hidden;
+                    btn_Funcion2.Visibility = Visibility.Visible;
+                    btn_Funcion3.Visibility = Visibility.Hidden;
+
+                    gridComandas.Visibility = Visibility.Hidden;
+                    break;
+
+                case EstadoMesa.Reservada:
+                    panelInfoMesaLibre.Visibility = Visibility.Hidden;
+                    panelInfoMesa.Visibility = Visibility.Visible;
+
+                    btn_Funcion1.Content = "Anular Reserva";
+                    btn_Funcion2.Content = "Modificar Reserva";
+                    btn_Funcion3.Content = "Clientes Sentados";
+                    btn_Funcion1.Visibility = Visibility.Visible;
+                    btn_Funcion2.Visibility = Visibility.Visible;
+                    btn_Funcion3.Visibility = Visibility.Visible;
+
+                    gridComandas.Visibility = Visibility.Hidden;
+                    break;
+
+                case EstadoMesa.Ocupada:
+                    panelInfoMesaLibre.Visibility = Visibility.Hidden;
+                    panelInfoMesa.Visibility = Visibility.Visible;
+
+                    btn_Funcion2.Content = "Tomar Nota";
+                    btn_Funcion1.Visibility = Visibility.Hidden;
+                    btn_Funcion2.Visibility = Visibility.Visible;
+                    btn_Funcion3.Visibility = Visibility.Hidden;
+
+                    gridComandas.Visibility = Visibility.Hidden;
+                    break;
+
+                case EstadoMesa.OcupadaComanda:
+                    panelInfoMesaLibre.Visibility = Visibility.Hidden;
+                    panelInfoMesa.Visibility = Visibility.Visible;
+
+                    btn_Funcion1.Content = "Añadir Platos";
+                    btn_Funcion3.Content = "Clientes Marcharon";
+                    btn_Funcion1.Visibility = Visibility.Visible;
+                    btn_Funcion2.Visibility = Visibility.Hidden;
+                    btn_Funcion3.Visibility = Visibility.Visible;
+
+                    cuadroComandas.ItemsSource = DatosRestaurante.datos.mesaSeleccionada.comanda;
+                    gridComandas.Visibility = Visibility.Visible;
+
+                    break;
             }
         }
+            //AQUI SE GESTIONAN LOS CLICKS EN LOS BOTONES DEL MENU DESPLEGADO
+        private void botonesMenuGestionMesas_Click(object sender, RoutedEventArgs e)
+        {
+                //ESTADO MESA LIBRE
+            if (DatosRestaurante.datos.mesaSeleccionada.estado == EstadoMesa.Libre && sender == btn_Funcion2)
+            {
+                ventanaModificarDatos = new VentanaReservar();
+                ventanaModificarDatos.ShowDialog();
+                DatosRestaurante.datos.mesaSeleccionada.estado = EstadoMesa.Reservada;
+            }
+
+            //ESTADO MESA RESERVADA
+            else if (DatosRestaurante.datos.mesaSeleccionada.estado == EstadoMesa.Reservada)
+            {
+                if (sender == btn_Funcion1) //Anular Reserva
+                {
+                    DatosRestaurante.datos.mesaSeleccionada.comensales = 0;
+                    DatosRestaurante.datos.mesaSeleccionada.estado = EstadoMesa.Libre;
+                } 
+                else if (sender == btn_Funcion2)    //Modificar Reserva
+                {
+                    ventanaModificarDatos = new VentanaReservar();
+                    ventanaModificarDatos.ShowDialog();
+                }
+                else    //CLIENTES SENTADOS
+                {
+                    DatosRestaurante.datos.mesaSeleccionada.estado = EstadoMesa.Ocupada;
+                }
+            }
+
+            //ESTADO MESA OCUPADA
+            else if (DatosRestaurante.datos.mesaSeleccionada.estado == EstadoMesa.Ocupada && sender == btn_Funcion2)
+            {
+                ventanaAnadirPlato = new VentanaAnadirPlato();
+                ventanaAnadirPlato.ShowDialog();
+            }
+
+            //ESTADO MESA OCUPADA CON COMANDA
+            else if (DatosRestaurante.datos.mesaSeleccionada.estado == EstadoMesa.OcupadaComanda)
+            {
+                if (sender == btn_Funcion1)
+                {
+                    ventanaAnadirPlato = new VentanaAnadirPlato();
+                    ventanaAnadirPlato.ShowDialog();
+                }
+                else if (sender == btn_Funcion3)
+                {
+                    DatosRestaurante.datos.mesaSeleccionada.comensales = 0;
+                    DatosRestaurante.datos.mesaSeleccionada.estado = EstadoMesa.Libre;
+                }
+            }
+
+            if (sender == btn_GestorAvanzado)
+            {
+                if (ventanaGestionMesas == null || !ventanaGestionMesas.IsLoaded)
+                {
+                    ventanaGestionMesas = new VentanaGestionMesas();
+                    ventanaGestionMesas.Show();
+                }
+                else { ventanaGestionMesas.Activate(); }
+            }
+            actualizarInterfazSegunEstado();
+        }
+
+
+        //---------- FUNCIONES DE COLUMNA DE BOTONES ----------//
 
         private void btnGestionMesas_Click(object sender, RoutedEventArgs e)
         {
-            if (ventanaGestionMesas == null || !ventanaGestionMesas.IsLoaded)
+            if (menuControlMesa.Visibility == Visibility.Visible)
             {
-
-                ventanaGestionMesas = new VentanaGestionMesas(this.listaMesas, this.listaPlatosPrimeros, this.listaPlatosSegundos, this.listaPlatosPostres, this.listaPlatosSobremesas, this.mesaSeleccionada);
-
-                ventanaGestionMesas.MesaSeleccionadaEvento += mesaSeleccionada_Click;
-
-                ventanaGestionMesas.Show();
-
+                btnGestionMesas.Background = Brushes.LightGray;
+                menuControlMesa.Visibility = Visibility.Hidden;
             }
             else
             {
-                ventanaGestionMesas.Activate();
+                if (gridZoom.Visibility == Visibility.Visible)
+                {
+                    if (DatosRestaurante.datos.mesaSeleccionada == null) DatosRestaurante.datos.mesaSeleccionada = DatosRestaurante.datos.listaMesas[0];
+                    btnGestionMesas.Background = Brushes.Gray;
+                    menuControlMesa.Visibility = Visibility.Visible;
+                }
+
+                    gridZoom.Visibility = Visibility.Visible;
+                    btnEstadistica.Background = Brushes.LightGray;
+                    tabEstadistica.Visibility = Visibility.Hidden;
+            }
+        }
+
+
+        private void btnEstadistica_Click(object sender, RoutedEventArgs e)
+        {
+            if (tabEstadistica.Visibility == Visibility.Visible)
+            {
+                gridZoom.Visibility = Visibility.Visible;
+                btnEstadistica.Background = Brushes.LightGray;
+                tabEstadistica.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                if (DatosRestaurante.datos.mesaSeleccionada != null)
+                {
+                    tabEstadistica.SelectedIndex = 1;
+                }
+                else
+                {
+                    tabEstadistica.SelectedIndex = 0;
+                }
+                gridZoom.Visibility = Visibility.Hidden;
+                btnGestionMesas.Background = Brushes.LightGray;
+                menuControlMesa.Visibility = Visibility.Hidden;
+                btnEstadistica.Background = Brushes.Gray;
+                tabEstadistica.Visibility = Visibility.Visible;
             }
 
-        }
-        private void btnAnadirMesas_Click(object sender, RoutedEventArgs e)
-        {
+            this.UpdateLayout();
+            actualizarGraficas();
 
         }
+
 
         private void btnVerCarta_Click(object sender, RoutedEventArgs e)
         {
-            if (extendedMenu.Visibility == Visibility.Visible)
-            {
-                btnVerCarta.Background = Brushes.LightGray;
-                extendedMenu.Visibility = Visibility.Hidden;
-            }
-            else
-            {
-                btnVerCarta.Background = Brushes.Gray;
-                extendedMenu.Visibility = Visibility.Visible;
-            }
+            MessageBoxResult res = MessageBox.Show("Opción en desarrollo, disculpa las molestias", "ERROR", MessageBoxButton.OK, MessageBoxImage.Warning);
 
         }
 
-        private void btnCuenta_Click(object sender, RoutedEventArgs e)
+
+        private void btnReiniciar_Click(object sender, RoutedEventArgs e)
         {
+            bool sesionLimpia = false;
 
+            MessageBoxResult resultado = MessageBox.Show("Quieres iniciar una sesión limpia? (En caso contrario se cargaran los datos de prueba)", "Bienvenido",
+            MessageBoxButton.YesNoCancel, MessageBoxImage.Question);
+            if (resultado != MessageBoxResult.Cancel)
+            {
+                if (resultado == MessageBoxResult.Yes) { sesionLimpia = true; }
+
+
+                DatosRestaurante.datos.inicializarDatos(sesionLimpia);
+                this.DataContext = DatosRestaurante.datos;
+
+                dibujarMesasMapa();
+                ajustarMapa();
+
+            }
         }
 
-        private void btnAjustes_Click(object sender, RoutedEventArgs e)
+
+
+
+
+        //-----------------------------------------//
+        //---------- GESTIÓN VISUAL SALA ----------//
+        //-----------------------------------------//
+
+        public void dibujarMesasMapa()
         {
+            foreach (Mesa m in DatosRestaurante.datos.listaMesas)
+            {
+                Grid gridMesa = m.gridMesaRepresentada;
+                gridMesa.MouseLeftButtonDown += (sender, e) => mesaSeleccionada_Click(m);
+                gridMapaMesas.Children.Add(gridMesa);
 
+                Grid.SetColumn(gridMesa, m.posicionX);
+                Grid.SetColumnSpan(gridMesa, m.spanX);
+                Grid.SetRow(gridMesa, m.posicionY);
+                Grid.SetRowSpan(gridMesa, m.spanY);
+            }
         }
-
-
-
-
-
-        //---------------------------------------//
-        //---------- GESTIÓN ZOOM SALA ----------//
-        //---------------------------------------//
 
         //----- MANEJO EVENTOS REDIMENSIONADO -----//
         public void ajustarMapa()
@@ -185,130 +355,171 @@ namespace Restaurante
         private void ventanaPrincipal_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             ajustarMapa();
+            actualizarGraficas();
         }
 
 
 
-        //----------------------------------------------//
-        //---------- BANCO DE DATOS DE PRUEBA ----------//
-        //----------------------------------------------//
-        public void mesasPrueba()
+        //-----------------------------------------//
+        //---------- GESTIÓN ESTADISTICA ----------//
+        //-----------------------------------------//
+
+        private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //---------- DATOS DE LAS MESAS ----------//
-            int[] posicionesX = { 13, 13, 13, 13, 13, 9, 11, 10, 9, 9,
-                9, 7, 5, 3, 3, 5, 7, 9, 7, 5 };
-            int[] posicionesY = { 15, 13, 9, 7, 5, 3, 5, 9, 12, 14,
-                16, 2, 2, 3, 7, 9, 9, 6, 7, 5 };
-            int[] spanX = { 1, 2, 1, 1, 1, 3, 1, 1, 2, 2,
-                2, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
-            int[] spanY = { 3, 1, 3, 1, 1, 1, 1, 1, 1, 1,
-                1, 2, 2, 3, 3, 2, 2, 1, 1, 1 };
-            int[] comensales = { 7, 4, 6, 2, 2, 7, 2, 1, 3, 4,
-                3, 5, 5, 8, 7, 4, 4, 2, 2, 1 };
-            int[] capacidades = { 8, 5, 8, 2, 2, 8, 2, 2, 5, 5,
-                5, 5, 5, 8, 8, 5, 5, 2, 2, 2 };
-            EstadoMesa[] estados = {EstadoMesa.Ocupada, EstadoMesa.Libre, EstadoMesa.Reservada, EstadoMesa.OcupadaComanda, EstadoMesa.Libre,
-                EstadoMesa.Ocupada, EstadoMesa.Libre, EstadoMesa.Reservada, EstadoMesa.Libre, EstadoMesa.OcupadaComanda,
-                EstadoMesa.Reservada, EstadoMesa.Libre, EstadoMesa.Ocupada, EstadoMesa.Libre, EstadoMesa.OcupadaComanda,
-                EstadoMesa.Reservada, EstadoMesa.Libre, EstadoMesa.Libre, EstadoMesa.Ocupada, EstadoMesa.OcupadaComanda };
-            FormaMesa[] formas = { FormaMesa.Elipse, FormaMesa.Rectangular, FormaMesa.Rectangular, FormaMesa.Rectangular, FormaMesa.Rectangular,
-                FormaMesa.Rectangular, FormaMesa.Rectangular, FormaMesa.Rectangular, FormaMesa.Rectangular, FormaMesa.Rectangular,
-                FormaMesa.Rectangular, FormaMesa.Rectangular, FormaMesa.Rectangular, FormaMesa.Rectangular, FormaMesa.Rectangular,
-                FormaMesa.Rectangular, FormaMesa.Rectangular, FormaMesa.Rectangular, FormaMesa.Rectangular, FormaMesa.Rectangular, };
+            if (e.Source is TabControl) actualizarGraficas();
+        }
+        private void actualizarGraficas()
+        {
+            if (tabEstadistica.Visibility != Visibility.Visible) return;
 
-            int i = 0;
-            //---------- CREACIÓN DE MESAS ----------//
-            for (i = 0; i < 20; i++)
+            if (tabEstadistica.SelectedIndex == 0) dibujarGraficaGlobal();
+            else dibujarGraficaMesa(DatosRestaurante.datos.mesaSeleccionada);
+        }
+
+            //GRAFICA GLOBAL
+        private void dibujarGraficaGlobal()
+        {
+            if (canvasGlobal == null) return;
+
+            canvasGlobal.Children.Clear();
+            ObservableCollection<Mesa> listaMesas = DatosRestaurante.datos.listaMesas;
+            if (listaMesas.Count == 0) return;
+
+
+            double maxPlatos = 0;
+            foreach (var m in listaMesas)
             {
-                Mesa m = new Mesa();
-                Grid gridMesa = m.nuevaMesa(i, comensales[i], capacidades[i], estados[i], formas[i]);
+                if (m.historialPlatos.Count > maxPlatos) maxPlatos = m.historialPlatos.Count;
+            }
+            if (maxPlatos == 0) maxPlatos = 1;
 
-                m.gridMesaRepresentada = gridMesa;
+            double anchoCanvas = canvasGlobal.ActualWidth;
+            double altoCanvas = canvasGlobal.ActualHeight - 30; // Margen inferior
 
-                gridMesa.MouseLeftButtonDown += (sender, e) => mesaSeleccionada_Click(m);
+            if (anchoCanvas <= 0 || altoCanvas <= 0) return;
 
-                gridMapaMesas.Children.Add(gridMesa);
-                listaMesas.Add(m);
+            double anchoBarra = (anchoCanvas / listaMesas.Count) * 0.7;
+            double espacio = (anchoCanvas / listaMesas.Count) * 0.3;
+            for (int i = 0; i < listaMesas.Count; i++)
+            {
+                Mesa m = listaMesas[i];
+                double alturaBarra = (m.historialPlatos.Count / maxPlatos) * altoCanvas;
 
-                Grid.SetColumn(gridMesa, posicionesX[i]);
-                Grid.SetColumnSpan(gridMesa, spanX[i]);
-                Grid.SetRow(gridMesa, posicionesY[i]);
-                Grid.SetRowSpan(gridMesa, spanY[i]);
+                Rectangle rect = new Rectangle();
+                rect.Width = anchoBarra;
+                rect.Height = alturaBarra;
+                rect.Fill = Brushes.Crimson;
+                rect.ToolTip = $"Mesa {m.id}: {m.historialPlatos.Count} platos totales";
 
-                m.figuraMesa.Stroke = Brushes.Black; m.figuraMesa.StrokeThickness = 2;
-                m.setEstado(estados[i]);
+                double x = (i * (anchoBarra + espacio)) + (espacio / 2);
+                double y = altoCanvas - alturaBarra;
 
+                Canvas.SetLeft(rect, x);
+                Canvas.SetTop(rect, y);
+                canvasGlobal.Children.Add(rect);
+
+                TextBlock label = new TextBlock();
+                label.Text = "M" + m.id;
+                label.FontSize = 10;
+                Canvas.SetLeft(label, x + (anchoBarra / 2) - 8);
+                Canvas.SetTop(label, altoCanvas + 5);
+                canvasGlobal.Children.Add(label);
             }
         }
-        public void cartaPrueba()
+
+        //GRAFICA MESA SELECCIONADA
+        private void dibujarGraficaMesa(Mesa m)
         {
-            // --- PRIMEROS (5 Platos) ---
-            listaPlatosPrimeros.Add(new Plato(1, "Ensalada César Imperial", "Lechuga romana crujiente, crutones de ajo, parmesano reggiano y nuestra salsa secreta.", 9.50, TipoPlato.Primero));
-            listaPlatosPrimeros.Add(new Plato(2, "Crema de Calabaza y Jengibre", "Suave crema de calabaza asada con un toque picante de jengibre y semillas de sésamo.", 8.00, TipoPlato.Primero));
-            listaPlatosPrimeros.Add(new Plato(3, "Risotto de Setas Silvestres", "Arroz arborio cremoso cocinado con boletus, trufa negra y terminación de mantequilla.", 12.50, TipoPlato.Primero));
-            listaPlatosPrimeros.Add(new Plato(4, "Gazpacho Andaluz Tradicional", "Sopa fría de tomate, pimiento y pepino con guarnición de jamón ibérico y huevo.", 7.50, TipoPlato.Primero));
-            listaPlatosPrimeros.Add(new Plato(5, "Parrillada de Verduras", "Selección de verduras de temporada a la brasa con aceite de albahaca y sal maldon.", 10.00, TipoPlato.Primero));
+            if (canvasMesa == null) return;
+            canvasMesa.Children.Clear();
 
-            // --- SEGUNDOS (5 Platos) ---
-            listaPlatosSegundos.Add(new Plato(1, "Entrecot de Ternera (300g)", "Corte de lomo bajo a la parrilla con pimientos de padrón y patatas gajo.", 22.00, TipoPlato.Segundo));
-            listaPlatosSegundos.Add(new Plato(2, "Salmón Noruego al Horno", "Lomo de salmón glaseado con miel y mostaza sobre cama de espárragos trigueros.", 18.50, TipoPlato.Segundo));
-            listaPlatosSegundos.Add(new Plato(3, "Carrillada Ibérica al Vino Tinto", "Carne tierna estofada a baja temperatura durante 12 horas con puré de patata trufado.", 16.00, TipoPlato.Segundo));
-            listaPlatosSegundos.Add(new Plato(4, "Lubina a la Espalda", "Pescado fresco abierto a la plancha con refrito de ajos, guindilla y vinagre de Jerez.", 19.00, TipoPlato.Segundo));
-            listaPlatosSegundos.Add(new Plato(5, "Lasaña de Carne a la Boloñesa", "Capas de pasta fresca, ragú de ternera y cerdo, bechamel suave y gratinado de mozzarella.", 14.50, TipoPlato.Segundo));
+            if (m == null) { txtTituloMesaEstadistica.Text = "Seleccione una mesa primero."; return; }
 
-            // --- POSTRES (5 Platos) ---
-            listaPlatosPostres.Add(new Plato(1, "Coulant de Chocolate", "Bizcocho caliente con corazón de chocolate fundido, acompañado de helado de vainilla.", 6.50, TipoPlato.Postre));
-            listaPlatosPostres.Add(new Plato(2, "Tarta de Queso Casera", "Estilo New York Cheesecake con base de galleta y mermelada de frutos rojos silvestres.", 6.00, TipoPlato.Postre));
-            listaPlatosPostres.Add(new Plato(3, "Tiramisú Clásico", "Capas de bizcocho soletilla empapados en café espresso y crema de mascarpone con cacao.", 5.50, TipoPlato.Postre));
-            listaPlatosPostres.Add(new Plato(4, "Sorbete de Limón al Cava", "Refrescante batido de helado de limón con un toque de cava brut nature.", 5.00, TipoPlato.Postre));
-            listaPlatosPostres.Add(new Plato(5, "Brocheta de Frutas de Temporada", "Selección de frutas frescas cortadas con baño de chocolate negro caliente.", 4.50, TipoPlato.Postre));
+            txtTituloMesaEstadistica.Text = $"Estadística Mesa {m.id} (Total Histórico: {m.historialPlatos.Count})";
 
-            // --- SOBREMESAS / BEBIDAS ESPECIALES (5 Platos) ---
-            listaPlatosSobremesas.Add(new Plato(1, "Café Irlandés Especial", "Café espresso, whisky irlandés, azúcar moreno y capa de nata montada.", 7.00, TipoPlato.Sobremesa));
-            listaPlatosSobremesas.Add(new Plato(2, "Gin Tonic Premium", "Ginebra de autor con tónica fever-tree, cardamomo y twist de lima.", 9.00, TipoPlato.Sobremesa));
-            listaPlatosSobremesas.Add(new Plato(3, "Mojito Cubano", "Ron blanco, hierbabuena fresca, lima, azúcar y soda con mucho hielo picado.", 8.50, TipoPlato.Sobremesa));
-            listaPlatosSobremesas.Add(new Plato(4, "Té Matcha Latte", "Té verde japonés en polvo batido con leche espumada y un toque de miel.", 4.00, TipoPlato.Sobremesa));
-            listaPlatosSobremesas.Add(new Plato(5, "Chupito de Hierbas", "Licor digestivo tradicional de hierbas maceradas, servido muy frío.", 3.00, TipoPlato.Sobremesa));
+            var primeros = m.historialPlatos.Where(p => p.tipo == TipoPlato.Primero).ToList();
+            var segundos = m.historialPlatos.Where(p => p.tipo == TipoPlato.Segundo).ToList();
+            var postres = m.historialPlatos.Where(p => p.tipo == TipoPlato.Postre).ToList();
+            var sobremesas = m.historialPlatos.Where(p => p.tipo == TipoPlato.Sobremesa).ToList();
+
+            double maxPlatos = Math.Max(Math.Max(primeros.Count, segundos.Count), Math.Max(postres.Count, sobremesas.Count));
+
+            if (maxPlatos == 0) maxPlatos = 1;
+
+            double anchoCanvas = canvasMesa.ActualWidth;
+            double altoCanvas = canvasMesa.ActualHeight - 200;
+
+            if (anchoCanvas <= 0 || altoCanvas <= 0) return;
+
+            double anchoColumna = anchoCanvas / 7;
+
+            dibujarColumnaApilada(primeros, anchoCanvas * 0.15, anchoColumna, altoCanvas, maxPlatos, "Primeros");
+            dibujarColumnaApilada(segundos, anchoCanvas * 0.38, anchoColumna, altoCanvas, maxPlatos, "Segundos");
+            dibujarColumnaApilada(postres, anchoCanvas * 0.61, anchoColumna, altoCanvas, maxPlatos, "Postres");
+            dibujarColumnaApilada(sobremesas, anchoCanvas * 0.84, anchoColumna, altoCanvas, maxPlatos, "Sobremesa");
         }
-        public void comandasPrueba()
+
+        private void dibujarColumnaApilada(List<Plato> platos, double xCentro, double ancho, double altoCanvas, double maxScale, string categoriaPlato)
         {
+            var grupos = platos.GroupBy(p => p.nombre).Select(g => new { Nombre = g.Key, Cantidad = g.Count() }).ToList(); //Agrupación platos iguales
+
+            double yAcumulada = altoCanvas;
             Random r = new Random();
-            foreach (Mesa m in listaMesas)
+
+            StackPanel panelLeyendaPorCategoria = new StackPanel();
+            panelLeyendaPorCategoria.Orientation = Orientation.Vertical;
+            panelLeyendaPorCategoria.Width = ancho + 40;
+
+            foreach (var grupo in grupos)
             {
-                if (m.comanda == null)
-                {
-                    m.comanda = new List<Plato>();
-                }
-                else
-                {
-                    m.comanda.Clear();
-                }
-                int numPlatos = r.Next(0, 5);
-                for (int i = 0; i < numPlatos; i++)
-                {
-                    int tipo = r.Next(0, 4);
-                    List<Plato> listaOrigen = null;
-                    switch (tipo)
-                    {
-                        case 0: listaOrigen = listaPlatosPrimeros; break;
-                        case 1: listaOrigen = listaPlatosSegundos; break;
-                        case 2: listaOrigen = listaPlatosPostres; break;
-                        case 3: listaOrigen = listaPlatosSobremesas; break;
+                double alturaSegmento = (grupo.Cantidad / maxScale) * altoCanvas;
 
-                    }
+                SolidColorBrush colorPlato = new SolidColorBrush(Color.FromRgb((byte)r.Next(50, 200), (byte)r.Next(50, 200), (byte)r.Next(50, 200)));
 
-                    if (listaOrigen != null && listaOrigen.Count > 0)
-                    {
-                        int id = r.Next(0, listaOrigen.Count);
-                        m.comanda.Add(listaOrigen[id]);
-                    }
+                Rectangle rect = new Rectangle();
+                rect.Width = ancho;
+                rect.Height = alturaSegmento;
+                rect.Fill = colorPlato;
+                rect.ToolTip = $"{grupo.Nombre}: {grupo.Cantidad}";
 
-                }
+                yAcumulada -= alturaSegmento;
+                Canvas.SetLeft(rect, xCentro - (ancho / 2));
+                Canvas.SetTop(rect, yAcumulada + 20);
+                canvasMesa.Children.Add(rect);
 
-                           
-                
+                StackPanel itemLeyenda = new StackPanel();
+                itemLeyenda.Orientation = Orientation.Horizontal;
+                itemLeyenda.Margin = new Thickness(0, 2, 0, 2);
+
+                Rectangle colorBox = new Rectangle();
+                colorBox.Width = 10;
+                colorBox.Height = 10;
+                colorBox.Fill = colorPlato;
+                colorBox.Margin = new Thickness(0, 0, 5, 0);
+
+                TextBlock txtPlato = new TextBlock();
+                txtPlato.Text = $"{grupo.Nombre} ({grupo.Cantidad})";
+                txtPlato.FontSize = 9;
+                txtPlato.TextWrapping = TextWrapping.Wrap;
+
+                itemLeyenda.Children.Add(colorBox);
+                itemLeyenda.Children.Add(txtPlato);
+
+                panelLeyendaPorCategoria.Children.Add(itemLeyenda);
             }
-        }
 
+            TextBlock labelCategoriaPlato = new TextBlock();
+            labelCategoriaPlato.Text = categoriaPlato;
+            labelCategoriaPlato.FontWeight = FontWeights.Bold;
+            labelCategoriaPlato.HorizontalAlignment = HorizontalAlignment.Center;
+
+            Canvas.SetLeft(labelCategoriaPlato, xCentro - 20);
+            Canvas.SetTop(labelCategoriaPlato, altoCanvas + 25);
+            canvasMesa.Children.Add(labelCategoriaPlato);
+
+            Canvas.SetLeft(panelLeyendaPorCategoria, xCentro - (ancho / 2) - 20);
+            Canvas.SetTop(panelLeyendaPorCategoria, altoCanvas + 45);
+            canvasMesa.Children.Add(panelLeyendaPorCategoria);
+        }
     }
 }

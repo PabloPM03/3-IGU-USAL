@@ -15,33 +15,27 @@ using System.Windows.Shapes;
 
 namespace Restaurante
 {
-
-
     public partial class VentanaGestionMesas : Window
     {
-        public event Action<Mesa> MesaSeleccionadaEvento;
-
-        List<Mesa> listaMesas;
-        List<Plato> listaPlatosPrimeros;
-        List<Plato> listaPlatosSegundos;
-        List<Plato> listaPlatosPostres;
-        List<Plato> listaPlatosSobremesas;
-
-        Mesa mesaSeleccionada;
-
         VentanaAnadirPlato ventanaAnadirPlato;
-        internal VentanaGestionMesas(List<Mesa> l, List<Plato> lp, List<Plato> ls, List<Plato> lpp, List<Plato> lss, Mesa mesaSeleccionada)
+        internal VentanaGestionMesas()
         {
             InitializeComponent();
 
-            cuadroMesas.ItemsSource = l;
-            this.listaMesas = l;
-            this.listaPlatosPrimeros = lp;
-            this.listaPlatosSegundos = ls;
-            this.listaPlatosPostres = lpp;
-            this.listaPlatosSobremesas = lss;
+            this.DataContext = DatosRestaurante.datos;
+            btnAnadirPlato.IsEnabled = false;
+            btnEliminarPlato.IsEnabled = false;
 
-            if (mesaSeleccionada != null) { SeleccionMesaDesdeMapa(mesaSeleccionada); }
+            DatosRestaurante.datos.cambioSeleccionMesa += OnCambioSeleccionMesa;
+        }
+
+        private void OnCambioSeleccionMesa(Mesa mesaSeleccionada)
+        {
+            if (mesaSeleccionada != null)
+            {
+                cuadroMesas.SelectedItem = mesaSeleccionada;
+                cuadroMesas.ScrollIntoView(mesaSeleccionada);
+            }
         }
 
         public void cuadroMesas_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -49,46 +43,24 @@ namespace Restaurante
             if (cuadroMesas.SelectedItem != null)
             {
                 Mesa mesaSeleccionada = (Mesa)cuadroMesas.SelectedItem;
-                this.mesaSeleccionada = mesaSeleccionada;
+                DatosRestaurante.datos.mesaSeleccionada = mesaSeleccionada;
+
                 cuadroComandas.ItemsSource = mesaSeleccionada.comanda;
 
-                MesaSeleccionadaEvento?.Invoke(mesaSeleccionada);
-
+                btnAnadirPlato.IsEnabled = true;
+                btnEliminarPlato.IsEnabled = true;
             }
-        }
-
-        public void SeleccionMesaDesdeMapa(Mesa mesaSeleccionada)
-        {
-            cuadroMesas.SelectedItem = mesaSeleccionada;
-            cuadroMesas.ScrollIntoView(mesaSeleccionada);
-            this.mesaSeleccionada = mesaSeleccionada;
-        }
-
-        public void cuadroComandas_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
         }
 
         private void btnEliminarPlato_Click(object sender, RoutedEventArgs e)
         {
-
+            DatosRestaurante.datos.mesaSeleccionada.comanda.Remove((Plato)cuadroComandas.SelectedItem);
         }
 
         private void btnAnadirPlato_Click(object sender, RoutedEventArgs e)
         {
-            if (ventanaAnadirPlato == null || !ventanaAnadirPlato.IsLoaded)
-            {
-
-                ventanaAnadirPlato = new VentanaAnadirPlato(this.mesaSeleccionada, this.listaPlatosPrimeros, listaPlatosSegundos, listaPlatosPostres, listaPlatosSobremesas);
-
-                ventanaAnadirPlato.Show();
-
-            }
-            else
-            {
-                ventanaAnadirPlato.Activate();
-            }
-
+            ventanaAnadirPlato = new VentanaAnadirPlato();
+            ventanaAnadirPlato.ShowDialog();
         }
     }
 }

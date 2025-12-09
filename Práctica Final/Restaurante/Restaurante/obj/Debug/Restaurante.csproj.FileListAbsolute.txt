@@ -34,3 +34,5 @@ C:\Users\KDINWARD\Repositorios\3-IGU-USAL\Práctica Final\Restaurante\Restaurant
 C:\Users\KDINWARD\Repositorios\3-IGU-USAL\Práctica Final\Restaurante\Restaurante\obj\Debug\VentanaGestionMesas.baml
 C:\Users\KDINWARD\Repositorios\3-IGU-USAL\Práctica Final\Restaurante\Restaurante\obj\Debug\VentanaAnadirPlato.g.cs
 C:\Users\KDINWARD\Repositorios\3-IGU-USAL\Práctica Final\Restaurante\Restaurante\obj\Debug\VentanaAnadirPlato.baml
+C:\Users\KDINWARD\Repositorios\3-IGU-USAL\Práctica Final\Restaurante\Restaurante\obj\Debug\VentanaReservar.g.cs
+C:\Users\KDINWARD\Repositorios\3-IGU-USAL\Práctica Final\Restaurante\Restaurante\obj\Debug\VentanaReservar.baml
